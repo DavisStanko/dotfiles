@@ -1,0 +1,56 @@
+# ~/.commonrc
+
+# Defaults
+export EDITOR="code"
+export TERMINAL="alacritty"
+export BROWSER="firefox"
+
+# Aliases
+# General.
+alias cp="cp -iv" # Prompt before overwrite. Verbose.
+alias mv="mv -iv" # Prompt before overwrite. Verbose.
+alias rm="rm -vI" # Verbose. Prompt once for 3+ files or -r.
+alias mkd="mkdir -pv" # Make parent directory. Verbose.
+alias ls="ls -hN --color=auto --group-directories-first" # Human readable. Print without quotes. Colorized. Directories dispalyed first.
+alias grep="grep --color=auto" # Colorized
+
+# Personal.
+# Edit todo list
+alias plan="vi -O ~/.todo/todo1 ~/.todo/todo2"
+# SSH into VPS
+alias vps="ssh root@davisstanko.com"
+# Rsync my files to my vps. Recursive. Transfer modification times. Compress. Partial transfer. Remove deleted files.
+alias website="rsync -rtzP --delete ~/projects/davisstanko/ root@davisstanko.com:/var/www/davisstanko"
+alias discordbot="rsync -rtzP --delete ~/projects/discordbot/ root@davisstanko.com:/home/discordbot"
+# Backup my files to a specified drive. Transfer modification times. Recursive. Compress. Partial transfer. Exclude replaceable folders due to drive size. Remove deleted files.
+alias backup="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude media/film/ --delete ~/ /mnt/2tb"
+
+# Utilities
+# newsboat
+alias news="newsboat"
+# nmtui
+alias nmt="nmtui"
+# Backup Package list
+alias pack="pacman -Qqe > ~/.packages"
+# Youtube dowloader
+alias yt="yt-dlp -i" # Ignore errors.
+alias yta="yt -x -f 'ba' --embed-thumbnail" # Extract best audio. Embed Thumbnail.
+# Sort directories by size
+alias sortsize="du -h --max-depth 1 | sort"
+# Convert all files in current directory
+alias webm="for i in *.webm; do ffmpeg -i "$i" "${i%.*}".mp4; rm "$i"; done"
+alias webp="for i in *.webp; do ffmpeg -i "$i" "${i%.*}".png; rm "$i"; done"
+# Start recording a 1080p/60fps video
+alias screenrecord="ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 output.mkv"
+# Shuffle pictures in working directory and display them with sxiv
+pic() {
+  find $1 -type f | shuf | sxiv -abis f &! exit
+}
+# Shuffle videos in working directory and play them with mpv.
+alias vid="mpv --shuffle . &! exit"
+# Bluetoothctl
+alias bt="bluetoothctl"
+# neovim
+alias vi="nvim"
+# pdf
+alias pdf="zathura --fork"
