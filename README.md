@@ -2,6 +2,31 @@
 
 This repository contains my personal configuration files, also known as dotfiles. These files configure various programs that I use daily on my computer which runs Arch Linux with the i3 window manager.
 
+Below is a sample of what my desktop looks like. For a more detailed description of the programs and configuration files included in this repository, please see the table of contents.
+![screenshot](dots.png)
+
+## Table of Contents
+
+* [Foreword](#foreword)
+* [Shell](#shell)
+* [Theme](#theme)
+* [Programs](#programs)
+  * [i3: a tiling window manager](#i3-a-tiling-window-manager)
+  * [Polybar: a status bar for the desktop environment](#polybar-a-status-bar-for-the-desktop-environment)
+  * [Rofi: a program launcher](#rofi-a-program-launcher)
+  * [Alacritty: a terminal emulator](#alacritty-a-terminal-emulator)
+  * [Neovim: a text editor](#neovim-a-text-editor)
+  * [Dunst: a notification daemon](#dunst-a-notification-daemon)
+  * [MPV: a media player](#mpv-a-media-player)
+  * [Neofetch: a system information tool](#neofetch-a-system-information-tool)
+  * [Newsboat: a RSS feed reader](#newsboat-a-rss-feed-reader)
+  * [Sxiv: an image viewer](#sxiv-an-image-viewer)
+  * [Picom: a compositor for transparent windows](#picom-a-compositor-for-transparent-windows)
+* [I have made some minor modifications to the following files:](#i-have-made-some-minor-modifications-to-the-following-files)
+  * [.xinitrc](#xinitrc)
+  * [.Xresources: used to configure the appearance of programs that use the X Resource Manager](#xresources-used-to-configure-the-appearance-of-programs-that-use-the-x-resource-manager)
+  * [.xprofile: used to set environment variables and start programs when logging in to the system](#xprofile-used-to-set-environment-variables-and-start-programs-when-logging-in-to-the-system)
+
 ## Foreword
 
 Blindly copying and pasting someone else's dotfiles can be dangerous because it can overwrite your existing configuration files and potentially cause problems with your system. It is important to read and understand the configuration files before using them, and to modify them to suit your personal preferences and needs.
