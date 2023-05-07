@@ -16,7 +16,8 @@ alias grep="grep --color=auto" # Colorized
 
 # Personal.
 # Edit todo list
-alias plan="vi -O ~/.todo/todo1 ~/.todo/todo2"
+alias plan="vi ~/.todo/todo1"
+# alias plan="vi -O ~/.todo/todo1 ~/.todo/todo2"
 # SSH into VPS
 alias vps="ssh root@davisstanko.com"
 # Rsync my files to my vps. Recursive. Transfer modification times. Compress. Partial transfer. Remove deleted files.
@@ -24,6 +25,10 @@ alias website="rsync -rtzP --delete ~/projects/davisstanko/ root@davisstanko.com
 alias discordbot="rsync -rtzP --delete ~/projects/discordbot/ root@davisstanko.com:/home/discordbot"
 # Backup my files to a specified drive. Transfer modification times. Recursive. Compress. Partial transfer. Exclude replaceable folders due to drive size. Remove deleted files.
 alias backup="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude media/film/ --delete ~/ /mnt/2tb"
+# alt backup touro
+alias backup_touro="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude media/film/ --delete ~/ /mnt/touro"
+# alt backup transend
+alias backup_transcend="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude media/film/ --delete ~/ /mnt/transcend"
 
 # Utilities
 # newsboat
@@ -36,7 +41,9 @@ alias pack="pacman -Qqe > ~/.packages"
 alias yt="yt-dlp -i" # Ignore errors.
 alias yta="yt -x -f 'ba' --embed-thumbnail" # Extract best audio. Embed Thumbnail.
 # Sort directories by size
-alias sortsize="du -h --max-depth 1 | sort"
+alias sortsize="du -h --max-depth=1 | sort -h"
+# See top 10 directories
+alias bloat="du -h --max-depth=1 2> /dev/null | sort -hr | tail -n +2 | head"
 # Convert all files in current directory
 alias webm="for i in *.webm; do ffmpeg -i "$i" "${i%.*}".mp4; rm "$i"; done"
 alias webp="for i in *.webp; do ffmpeg -i "$i" "${i%.*}".png; rm "$i"; done"
@@ -53,4 +60,5 @@ alias bt="bluetoothctl"
 # neovim
 alias vi="nvim"
 # pdf
-alias pdf="zathura --fork"
+alias zathura="zathura --fork"
+alias zat="zathura --fork"
