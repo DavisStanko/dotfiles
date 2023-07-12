@@ -31,9 +31,6 @@ for_window [class="krunner"] floating enable
 gaps inner 10
 gaps outer 0
 
-
-
-
 # set wallpaper
 exec --no-startup-id feh --no-fehbg --randomize --bg-scale ~/.config/wallpapers
 bindsym $mod+b exec feh --no-fehbg --randomize --bg-scale ~/.config/wallpapers
