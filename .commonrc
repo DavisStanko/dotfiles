@@ -70,8 +70,8 @@ alias vid="mpv --shuffle . &! exit"
 alias zat="zathura --fork"
 
 playlist() {
-    songs_directory="$HOME/music"
-    playlist_directory="$HOME/.playlists"
+    songs_directory="$HOME/music/songs"
+    playlist_directory="$HOME/music/playlists"
 
     # Iterate over each subdirectory in the songs directory
     for dir in "$songs_directory"/*; do
