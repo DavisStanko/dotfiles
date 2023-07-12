@@ -104,10 +104,6 @@ Xinit is a utility that allows users to start an X Window System server and run 
 
 Xresources is a database that stores default values for a variety of X Window System resources. The configuration included in this repository modifies the background colors of sxiv to match the Gruvbox theme.
 
-### .xprofile: used to set environment variables and start programs when logging in to the system
-
-xprofile is a script that is run by the X Window System when starting the X server. The configuration included in this repository modifies the behavior of the Caps Lock key, swapping it with the Escape key. This modification can be especially useful for users who frequently use Vim or other keyboard-driven programs, as the Escape key is often used as a keybinding in these programs. In addition, swapping Caps Lock with Escape can be convenient for everyday use, as it allows users to quickly and easily access the Escape key without having to stretch their fingers to the top left corner of the keyboard. Overall, this modification can enhance the efficiency and convenience of keyboard-driven tasks and improve the overall user experience.
-
 ## Wallpapers
 
 I have also included a folder of wallpapers in the repository meant to go well with the Gruvbox theme and the i3 config random wallpaper script.
