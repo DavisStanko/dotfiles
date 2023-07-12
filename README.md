@@ -8,9 +8,9 @@ Below is a sample of what my desktop looks like. For a more detailed description
 ## Table of Contents
 
 * [Foreword](#foreword)
-* [Shell](#shell)
 * [Theme](#theme)
 * [Programs](#programs)
+  * [ZSH: a shell](#zsh-a-shell)
   * [i3: a tiling window manager](#i3-a-tiling-window-manager)
   * [Polybar: a status bar for the desktop environment](#polybar-a-status-bar-for-the-desktop-environment)
   * [Rofi: a program launcher](#rofi-a-program-launcher)
