@@ -71,7 +71,7 @@ This config is highly personalized and is not a plug-and-play solution. I recomm
 
 ### Polybar: a status bar for the desktop environment
 
-Polybar is a lightweight and highly customizable bar that can be displayed at the top of the screen. I prefer it to i3's built in status bar. My configuration includes active workspaces displayed on the left, the active window's title displayed in the middle, and various system information such as volume, brightness, battery, and time displayed on the right. Some modules are able to be clicked for added functionality but no features require mouse use. This configuration allows for quick and easy access to important information and nothing more.
+Polybar is a lightweight and highly customizable bar that can be displayed at the top of the screen. I prefer it to i3's built in status bar. My configuration includes active workspaces and the current playing song displayed on the left, the active window's title displayed in the middle, and various system information such as volume, brightness, battery, and time displayed on the right. Some modules are able to be clicked for added functionality but no features require mouse use. This configuration allows for quick and easy access to important information and nothing more.
 
 ### Rofi: a program launcher
 
