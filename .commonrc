@@ -24,13 +24,12 @@ alias plan="vi -O ~/.todo/todo1 ~/.todo/todo2"
 alias vps="ssh root@davisstanko.com"
 # Rsync my files to my vps. Recursive. Transfer modification times. Compress. Partial transfer. Remove deleted files.
 alias website="rsync -rtzP --delete --exclude .git/objects/ ~/projects/davisstanko/ root@davisstanko.com:/var/www/davisstanko"
-alias discordbot="rsync -rtzP --delete --exclude .git/objects/ ~/projects/discordbot/ root@davisstanko.com:/home/discordbot"
 # Backup my files to a specified drive. Transfer modification times. Recursive. Compress. Partial transfer. Exclude replaceable folders due to drive size. Remove deleted files.
-alias backup="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude media/film/ --delete ~/ /mnt/2tb"
+alias backup="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude film/ --exclude games/ --delete ~/ /mnt/2tb"
 # alt backup touro
-alias backup_touro="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude media/film/ --delete ~/ /mnt/touro"
+alias backup_touro="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude film/ --exclude games/ --delete ~/ /mnt/touro"
 # alt backup transend
-alias backup_transcend="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude media/film/ --delete ~/ /mnt/transcend"
+alias backup_transcend="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude film/ --exclude games/ --delete ~/ /mnt/transcend"
 
 # Utilities
 # search
