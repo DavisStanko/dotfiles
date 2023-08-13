@@ -23,6 +23,8 @@ exec_always --no-startup-id autotiling
 
 # Reload xresources
 exec --no-startup-id xrdb ~/.Xresources
+
+# Swap caps and esc
 exec --no-startup-id setxkbmap -option caps:swapescape
 
 # remove the titlebar
