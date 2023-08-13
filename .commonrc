@@ -54,8 +54,16 @@ alias webp="for i in *.webp; do ffmpeg -i "$i" "${i%.*}".png; rm "$i"; done"
 alias screenrecord="ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 output.mp4"
 # Bluetoothctl
 alias bt="bluetoothctl"
-# neovim
-alias vi="nvim"
+# Neovim
+vi() {
+  if [ $# -eq 0 ]; then
+    # If no arguments are provided, run 'nvim .' to open current directory
+    nvim .
+  else
+    # If arguments are provided, run 'nvim' with those arguments
+    nvim "$@"
+  fi
+}
 
 # Media
 # Shuffle pictures in working directory and display them with sxiv
