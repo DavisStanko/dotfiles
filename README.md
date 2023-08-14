@@ -121,7 +121,7 @@ The configuration included in this repository has been modified to include the d
 I prefer to use zsh as my shell since it's more feature rich and modern, but my configuration files also work with bash. The configuration included in this repository has been modified to include a variety of useful features, including:
 
 #### zsh specific features
-* Syntax highlighting
+* Syntax highlighting with [zdharma-continuum/fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
 * Better tab completion
 * Vi mode
 
