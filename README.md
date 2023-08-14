@@ -7,27 +7,36 @@ Below is a sample of what my desktop looks like. For a more detailed description
 
 ## Table of Contents
 
-* [Foreword](#foreword)
+* [Installation](#installation)
 * [Theme](#theme)
-* [Programs](#programs)
-  * [ZSH: a shell](#zsh-a-shell)
-  * [i3: a tiling window manager](#i3-a-tiling-window-manager)
-  * [Polybar: a status bar for the desktop environment](#polybar-a-status-bar-for-the-desktop-environment)
-  * [Rofi: a program launcher](#rofi-a-program-launcher)
-  * [Alacritty: a terminal emulator](#alacritty-a-terminal-emulator)
-  * [Neovim: a text editor](#neovim-a-text-editor)
-  * [Dunst: a notification daemon](#dunst-a-notification-daemon)
-  * [MPV: a media player](#mpv-a-media-player)
-  * [MPD and ncmpcpp: a music player daemon and client](#mpd-and-ncmpcpp-a-music-player-daemon-and-client)
-  * [Neofetch: a system information tool](#neofetch-a-system-information-tool)
-  * [Newsboat: a RSS feed reader](#newsboat-a-rss-feed-reader)
-  * [Sxiv: an image viewer](#sxiv-an-image-viewer)
-  * [Picom: a compositor for transparent windows](#picom-a-compositor-for-transparent-windows)
-* [I have made some minor modifications to the following files:](#i-have-made-some-minor-modifications-to-the-following-files)
-  * [.xinitrc](#xinitrc)
-  * [.Xresources: used to configure the appearance of programs that use the X Resource Manager](#xresources-used-to-configure-the-appearance-of-programs-that-use-the-x-resource-manager)
+* [Desktop Environment](#desktop-environment)
+  * [i3](#i3)
+    * [``.xinitrc``](#xinitrc)
+    * [Picom](#picom)
+  * [Polybar](#polybar)
+  * [Rofi](#rofi)
+  * [Dunst](#dunst)
+  * [Neofetch](#neofetch)
+* [Shell](#shell)
+  * [zsh](#zsh)
+  * [Alacritty](#alacritty)
+* [neovim](#neovim)
+  * [`init.lua`](#initlua)
+  * [`options.lua`](#optionslua)
+  * [`plugins.lua`](#pluginslua)
+  * [`keymaps.lua`](#keymapslua)
+  * [`colorscheme.lua`](#colorschemelua)
+  * [`lsp.lua`](#lsplua)
+  * [`config/nvim-cmp.lua`](#confignvim-cmplua)
+* [Media](#media)
+  * [mpv](#mpv)
+  * [mpd](#mpd)
+  * [ncmpcpp](#ncmpcpp)
+  * [sxiv](#sxiv)
+    * [``.Xresources``](#xresources---configures-x-window-system-resources)
+* [Wallpapers](#wallpapers)
+* [License](#license)
 
-## Foreword
 
 ## Installation
 
@@ -41,101 +50,203 @@ To use these dotfiles on your own system, you can simply copy paste the text fro
 
 I use the Gruvbox color scheme for my desktop environment. Gruvbox is a retro groove color scheme for Vim, terminal emulators, and other text-based applications. It's colors are available at [morhetz/gruvbox](https://github.com/morhetz/gruvbox).
 
-## Programs
+## Desktop Environment
 
-### ZSH: a shell
+### i3
+
+i3 is the most popular tiling window manger because it is lightweight, easy to use, and highly customizable. The configuration included in this repository has been modified to include a variety of useful features, including:
+
+* Gaps between windows (not available if using i3 non-gaps package which will be phased out in the future)
+* Autotiling
+* i3lock support
+* normal vim keys (`hjkl`, not i3's default shifted vim keys `jkl;`)
+* caps lock and escape key swap
+* screenshot support (using maim)
+* Random wallpaper script
+
+**Breaking changes**
+
+This program's config in particular is highly personalized and is not a plug-and-play solution. If an error occurs, it might make i3 unusable. I recommend users to familiarize themselves with the changes made and the keybindings used in order to fully take advantage of this configuration.
+
+- JetbrainsMono Nerd Font is used. If you do not have this font installed, you will need to change the font in the config.
+- Xrandr is set to 144hz. If you have a different refresh rate, you will need to change this.
+- Autostart programs. A handfull of programs are started automatically when i3 starts. If you do not have these programs installed, you will need to remove them from the config.
+- Hotkey programs. The programs I use most are bound to hotkeys. If you do not have these programs installed, these hotkeys will not work.
+
+#### ``.xinitrc``
+
+This file configures the command `startx` to open i3. This is nessecary since I do not use a login manager such as GDM or LightDM in the intrest of simplicity and speed.
+
+#### Picom
+
+Picom is a compositor for X11 windowing systems. The configuration included in this repository is completely blank, as it has been created not to use any of its visual features, but instead to reduce screen tearing. If you do not experience screen tearing, you do not need to use Picom.
+
+### Polybar
+
+Polybar is a lightweight and highly customizable bar that can be displayed at the top of the screen. I prefer it to i3's built in status bar because I find it easier to configure. My configuration includes the following modules in order from left to right:
+
+- Workspace indicator
+  - Active workspace is highlighted. Empty workspaces are not displayed. Clicking on a workspace or scrolling on the bar will switch workspaces.
+- Playerctl module
+  - Displays the currently playing song and artist. Clicking on the module will play/pause the song.
+- Active Window title
+  - Displays the title of the currently focused window.
+- Volume
+  - Displays the current volume level. Clicking on the module will mute/unmute the volume. Scrolling on the module will increase/decrease the volume.
+- Brightness
+  - Displays the current brightness level. Scrolling on the module will increase/decrease the brightness.
+- Battery
+  - Displays the current battery level. Clicking on the module will open the power manager. Scrolling on the module unfortunately cannot increase your battery level.
+- Date and time
+  - Displays the current time or date. Clicking on the module switches between the two.
+
+### Rofi
+
+Rofi is an application launcher. I prefer it to dmenu because it looks pretty.
+
+### Dunst
+
+Dunst displays notifications. That's it.
+
+### Neofetch
+
+Neofetch shows your system information. It isn't necessary, but it looks cool.
+
+The configuration included in this repository has been modified to include the display of the screen's refresh rate alongside the resolution in the output.
+
+## Shell
+
+### zsh
 
 I prefer to use zsh as my shell since it's more feature rich and modern, but my configuration files also work with bash. The configuration included in this repository has been modified to include a variety of useful features, including:
 
-#### ZSH specific features
+#### zsh specific features
 * Syntax highlighting
 * Better tab completion
 * Vi mode
 
-#### POSIX shell features
-* Useful aliases and functions
+#### Shell agnostic features
+* Useful aliases and functions (look in `.commonrc` to see them all)
 * Auto ls after cd
 * Informative prompt
-* Caps lock and escape key swap
 * Home, end, and delete keys work properly
-
 
 Most shell configuration is in the `.commonrc` file so that it can be shared between bash and zsh. The `.zshrc` and `.bashrc` files are used to set features specific to each shell.
 
-### i3: a tiling window manager
+### Alacritty
 
-i3 is the most popular tiling window manger because it is lightweight, easy to use, and highly customizable. The configuration included in this repository has been modified to include a variety of useful features, including:
+Terminals are very simple programs. I like Alacritty because it works. If you want more features, consider Kitty. If you want fewer features, consider st.
 
-* Gruvbox theme
-* Random wallpaper script
-* Gaps between windows (not available if using i3 non-gaps package which will be phased out in the future)
-* i3lock support
-* screenshot support (using maim)
-* normal vim keys (`hjkl`, not i3's default shifted vim keys `jkl;`)
+## neovim
 
-This config is highly personalized and is not a plug-and-play solution. I recommend users to familiarize themselves with the changes made and the keybindings used in order to fully take advantage of this configuration.
+neovim is just Vim but better. If you currently use Vim your current `init.vim` will work with neovim. There is no reason not to switch.
+ 
+If you have never used Vim bindings before, you should look into them. They are the most efficient way to edit text. If you are interested in learning Vim simply using Vimtutor which is a interactive text tutorial that comes with Vim and neovim. If you would rather watch a video, I recommend you watch [The Primeagen's](https://www.youtube.com/@ThePrimeagen) playlist [Vim As Your Editor](https://www.youtube.com/watch?v=X6AR2RMB5tE&list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R&pp=iAQB) on YouTube. This will teach you everything you need to know about Vim.
 
-### Polybar: a status bar for the desktop environment
+The configuration included in this repository has been modified to include a variety of useful features across multiple configuration files.
 
-Polybar is a lightweight and highly customizable bar that can be displayed at the top of the screen. I prefer it to i3's built in status bar. My configuration includes active workspaces and the current playing song displayed on the left, the active window's title displayed in the middle, and various system information such as volume, brightness, battery, and time displayed on the right. Some modules are able to be clicked for added functionality but no features require mouse use. This configuration allows for quick and easy access to important information and nothing more.
+### `init.lua`
+This file just imports the other configuration files.
 
-### Rofi: a program launcher
+### `options.lua`
 
-Rofi is a powerful and customizable application launcher and window switcher. I prefer it to dmenu The configuration included in this repository has been modified only with cosmetic settings to make it blend seamlessly with the Gruvbox theme. No functional changes have been made to Rofi.
+This file configures the general options of neovim.
 
-### Alacritty: a terminal emulator
+- Mouse support
+- Use system clipboard
+- 4 space tabs
+- Convenient line wrapping
+- Trailing white space removal on save
+- Sane UI defaults
+- Standard search options
+- Plugin configuration
 
-Alacritty is  a fast and lightweight terminal emulator. The configuration included in this repository has been modified to match the Gruvbox theme, with the background color changed to blend seamlessly with the overall visual style. In addition, the dynamic window title feature has been enabled, allowing the terminal window to display the current working directory or command being run. If you are looking for a more feature rich but similar terminal consider Kitty instead.
+### `plugins.lua`
 
-### Neovim: a text editor
+This file configures [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) which is a plugin manager for neovim written in Lua. When `PackerSync` is run, the following plugins and their dependencies will be installed:
 
-Neovim is a fork of the popular Vim text editor. This configuration includes the official Gruvbox theme, which was originally designed for Vim. In addition, the configuration uses Plug, a plugin manager, to manage and install a variety of useful plugins, including vim-surround, nerdtree, goyo, vim-airline, and vim-css-color. Please note that this configuration includes significant modifications and is not a plug-and-play solution. I recommend users to familiarize themselves with the changes made and the plugins installed in order to fully take advantage of this configuration.
+- Styling
+  - [wittyjudge/gruvbox-material.nvim](https://github.com/wittyjudge/gruvbox-material.nvim)
+  - [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
+  - [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+- Utilities
+  - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+  - [preservim/nerdtree](https://github.com/preservim/nerdtree)
+  - [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
+  - [ap/vim-css-color](https://github.com/ap/vim-css-color)
+- Copilot, LSP, Autocompletetion
+  - [github/copilot.vim](https://github.com/github/copilot.vim)
+  - [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim)
 
-### Dunst: a notification daemon
 
-Dunst is a lightweight and customizable notification daemon. The configuration included in this repository has been modified to fit the Gruvbox theme. No functional changes have been made to Dunst.
+### `keymaps.lua`
 
-### MPV: a media player
+This file configures my custom keybindings and commands for neovim.
 
-MPV is a powerful and lightweight media player. This configuration makes MPV start in windowed mode rather than fullscreen, display images indefinitely, and automatically selects English audio tracks and subtitles when available. Most importantly, it includes mpris support meaning media keys will work with MPV as well as a script that allows the deletion of the currently playing file.
+- Leader key is set to `space`
+- Shortcut find and replace to `S`
+- Toggle on spellcheck with `leader + o`
+- Save with sudo with `:w!!`
+- Toggle nerd tree with `leader + n`
+- Open telescope with `leader + f`
+- Open a vscode-like terminal with `leader + t`
+- Standard split navigation and resizing shortcuts
 
-### MPD and ncmpcpp: a music player daemon and client
+### `colorscheme.lua`
 
-MPD is to music what MPV is to video. It is a powerful and lightweight music player daemon. MPD shouldn't be used directly, but rather with a client such as ncmpcpp. The MPD configuration is very simple and only includes the location of songs and playlists along with audio visualization support. The ncmpcpp configuration is more complex but mostly boils down to Vim keybindings and minor cosmetic changes.
+This file sets the color scheme of neovim and vim-airline to Gruvbox.
 
-### Neofetch: a system information tool
+### `lsp.lua`
 
-Neofetch is a command-line system information tool. The configuration included in this repository has been modified to include the display of the screen's refresh rate alongside the resolution in the output.
+This file sets up language server protocol support for neovim. LSPs need to be installed separately for each language using the `:LspInstall` command.
 
-### Newsboat: a RSS feed reader
+### `config/nvim-cmp.lua`
 
-Newsboat is a powerful and lightweight RSS feed reader. The configuration included in this repository has undergone a plethora of modifications to enhance its functionality and convenience for the user. Some of the notable changes include the ability to notify the user of new RSS feed items, the option to open the feed in the default browser, the ability to open videos with MPV, the use of Vim keys to navigate, and various changes to the color scheme.
+This file configures autocompletion and it's hotkeys.
 
-### Sxiv: an image viewer
+## Media
 
-Sxiv is a simple and lightweight image viewer. The configuration included in this repository has been modified to include a convenient shortcut for deleting the currently displayed image. By pressing Ctrl+X followed by Ctrl+D, users can delete the currently displayed image.
+### mpv
 
-### Picom: a compositor for transparent windows
+mpv is better than VLC.
 
-Picom is a lightweight compositor for X11 windowing systems. The configuration included in this repository is completely blank, as it has been created not to use any of its visual features, but instead to reduce screen tearing. Please note that Picom is an optional tool and is only necessary for users who experience screen tearing on their system. If you do not experience screen tearing, you may not need to use Picom at all.
+I've made the following changes to the default configuration:
+- Start in windowed mode
+- Display images indefinitely
+- Automatically select English audio tracks and subtitles when available
+- MPRIS support (media keys work)
 
-## I have made some minor modifications to the following files:
+### mpd
 
-### .xinitrc
+mpd is to music what mpv is to video. It is a powerful and lightweight music player daemon. mpd shouldn't be used directly, but rather with a client such as ncmpcpp.
 
-Xinit is a utility that allows users to start an X Window System server and run window managers or desktop environments. The configuration included in this repository runs the i3 window manager when the startx command is run, allowing users to start an X server and launch i3 without the need for a login manager or display manager. This configuration offers a simple and lightweight solution for starting an X server and running a window manager, making it an ideal choice for users who prefer a minimalistic and efficient setup."
+My mpd configuration is very simple and only includes the location of songs and playlists along with audio visualization support. mpd is configured to automatically start when the computer boots in my i3 config.
 
-### .Xresources: used to configure the appearance of programs that use the X Resource Manager
+#### mpDris2
 
-Xresources is a database that stores default values for a variety of X Window System resources. The configuration included in this repository modifies the background colors of sxiv to match the Gruvbox theme.
+mpDris2 is a MPRIS bridge for mpd. It allows mpd to be controlled by media keys. mpDris2 is configured to automatically start when the computer boots in my i3 config.
+
+### ncmpcpp
+
+ncmpcpp is a music player client for mpd.
+
+My configuration mostly boils down to Vim keybindings, minor cosmetic changes, and the removal of windows that I don't use.
+
+### sxiv
+
+Simple X Image Viewer is a simple image viewer for the X Window System. Need I say more?
+
+The configuration included in this repository has been modified to include a convenient shortcut `Ctrl+X Ctrl+D` for deleting the currently displayed image.
+
+#### ``.Xresources`` - configures X Window System resources
+
+Xresources is a database that stores the default X Window System resources values.
+
+sxiv uses this for theming so this file is used to set the colors to match the Gruvbox theme.
 
 ## Wallpapers
 
-I have also included a folder of wallpapers in the repository meant to go well with the Gruvbox theme and the i3 config random wallpaper script.
-
-## Installation
-
-To use these dotfiles on your own system, you can simply copy paste the text from the desire file and paste it into your own. However, I recommend you only take the parts from mine that interest you and modify the rest for your personal use.
+I have included a folder of wallpapers in the repository meant to go well with the Gruvbox theme and the i3 config random wallpaper script.
 
 ## License
 
