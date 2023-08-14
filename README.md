@@ -19,7 +19,7 @@ Below is a sample of what my desktop looks like. For a more detailed description
   * [Neofetch](#neofetch)
 * [Shell](#shell)
   * [zsh](#zsh)
-  * [Alacritty](#alacritty)
+  * [kitty](#kitty)
 * [neovim](#neovim)
   * [`init.lua`](#initlua)
   * [`options.lua`](#optionslua)
@@ -48,7 +48,9 @@ To use these dotfiles on your own system, you can simply copy paste the text fro
 
 ## Theme
 
-I use the Gruvbox color scheme for my desktop environment. Gruvbox is a retro groove color scheme for Vim, terminal emulators, and other text-based applications. It's colors are available at [morhetz/gruvbox](https://github.com/morhetz/gruvbox).
+I use the Gruvbox color scheme for my desktop environment. Every program I use is themed to match this color scheme.
+
+Gruvbox is a retro groove color scheme for Vim, terminal emulators, and other text-based applications. It's colors are available at [morhetz/gruvbox](https://github.com/morhetz/gruvbox).
 
 ## Desktop Environment
 
@@ -133,9 +135,15 @@ I prefer to use zsh as my shell since it's more feature rich and modern, but my 
 
 Most shell configuration is in the `.commonrc` file so that it can be shared between bash and zsh. The `.zshrc` and `.bashrc` files are used to set features specific to each shell.
 
-### Alacritty
+### kitty
 
-Terminals are very simple programs. I like Alacritty because it works. If you want more features, consider Kitty. If you want fewer features, consider st.
+kitty is one of the most feature rich terminal emulators available while also being lightweight. If you are looking for something with fewer features, I recommend you use alacrity or st.
+
+The configuration included in this repository has been modified to include a variety of useful features, including:
+
+- Disabled the bell
+- Disabled confirmation on quit
+- Enabled background opacity
 
 ## neovim
 
