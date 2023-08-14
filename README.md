@@ -29,7 +29,13 @@ Below is a sample of what my desktop looks like. For a more detailed description
 
 ## Foreword
 
-Blindly copying and pasting someone else's dotfiles can be dangerous because it can overwrite your existing configuration files and potentially cause problems with your system. It is important to read and understand the configuration files before using them, and to modify them to suit your personal preferences and needs.
+## Installation
+
+**Warning**
+
+*Blindly copying and pasting someone else's dotfiles can be dangerous. It is important to read and understand these configuration files before using them, and to modify them to suit your personal preferences and needs.*
+
+To use these dotfiles on your own system, you can simply copy paste the text from the desired file and paste it into your own. However, I recommend you only take the parts from mine that interest you and modify the rest for your personal use.
 
 ## Theme
 
