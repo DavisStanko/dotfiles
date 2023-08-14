@@ -62,7 +62,7 @@ i3 is the most popular tiling window manger because it is lightweight, easy to u
 * normal vim keys (`hjkl`, not i3's default shifted vim keys `jkl;`)
 * caps lock and escape key swap
 * screenshot support (using maim)
-* Random wallpaper script
+* Random wallpaper script using [derf/feh](https://github/com/derf/feh)
 
 **Breaking changes**
 
