@@ -39,9 +39,11 @@ return require('packer').startup(function(use)
     use 'vim-airline/vim-airline-themes'
     -- Utilities
     use 'nvim-telescope/telescope.nvim'
-    use 'preservim/nerdtree'
     use 'tpope/vim-commentary'
     use 'ap/vim-css-color'
+    -- NerdTree
+    use 'preservim/nerdtree'
+    use 'Xuyuanp/nerdtree-git-plugin'
     -- Copilot, LSP, Autocompletion
     use 'github/copilot.vim'
     use {
