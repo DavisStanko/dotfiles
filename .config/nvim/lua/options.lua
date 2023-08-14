@@ -58,3 +58,6 @@ end
 vim.cmd([[
   autocmd BufEnter * silent! lcd %:p:h
 ]])
+
+-- live-server
+require('live-server').setup(opts)
