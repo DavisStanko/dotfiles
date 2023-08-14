@@ -44,6 +44,10 @@ return require('packer').startup(function(use)
     -- NerdTree
     use 'preservim/nerdtree'
     use 'Xuyuanp/nerdtree-git-plugin'
+    -- Live Previews
+    -- I use glow for markdown preview
+    use 'barrett-ruth/live-server.nvim'
+    use 'lervag/vimtex'
     -- Copilot, LSP, Autocompletion
     use 'github/copilot.vim'
     use {
