@@ -10,7 +10,7 @@ song_columns_list_format = "(50)[]{t|fr:Title} (0)[magenta]{a}"
 
 # UI
 message_delay_time = "1"
-header_visibility = "no"
+header_visibility = "yes"
 titles_visibility = "no"
 playlist_show_remaining_time = "no"
 playlist_shorten_total_times = "yes"
@@ -22,5 +22,7 @@ allow_for_physical_item_deletion = "yes"
 ask_before_clearing_playlists = "no"
 
 # Visualizer
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualizer feed"
 visualizer_in_stereo = no
 visualizer_spectrum_dft_size = "5"
