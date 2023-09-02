@@ -12,7 +12,6 @@ Below is a sample of what my desktop looks like. For a more detailed description
 * [Desktop Environment](#desktop-environment)
   * [i3](#i3)
     * [``.xinitrc``](#xinitrc)
-    * [Picom](#picom)
   * [Polybar](#polybar)
   * [Rofi](#rofi)
   * [Dunst](#dunst)
@@ -78,10 +77,6 @@ This program's config in particular is highly personalized and is not a plug-and
 #### ``.xinitrc``
 
 This file configures the command `startx` to open i3. This is nessecary since I do not use a login manager such as GDM or LightDM in the intrest of simplicity and speed.
-
-#### Picom
-
-Picom is a compositor for X11 windowing systems. The configuration included in this repository is completely blank, as it has been created not to use any of its visual features, but instead to reduce screen tearing. If you do not experience screen tearing, you do not need to use Picom.
 
 ### Polybar
 
