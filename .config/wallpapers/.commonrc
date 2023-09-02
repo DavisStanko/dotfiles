@@ -1,0 +1,86 @@
+# ~/.commonrc
+setxkbmap -option "caps:swapescape"
+
+# Defaults
+export EDITOR="code"
+export TERMINAL="alacritty"
+export BROWSER="firefox"
+
+# Aliases
+# General.
+alias cp="cp -iv" # Prompt before overwrite. Verbose.
+alias mv="mv -iv" # Prompt before overwrite. Verbose.
+alias rm="rm -vI" # Verbose. Prompt once for 3+ files or -r.
+alias mkd="mkdir -pv" # Make parent directory. Verbose.
+alias ls="ls -hN --color=auto --group-directories-first" # Human readable. Print without quotes. Colorized. Directories dispalyed first.
+alias grep="grep --color=auto" # Colorized
+alias sxiv="sxiv -abs f" # Animate gifs. No bar. Fit image.
+
+# Personal.
+# Open ToDo list in vim split vertically
+alias plan="vi -O ~/.plan/1 ~/.plan/2"
+# SSH into VPS
+alias vps="ssh root@davisstanko.com"
+# Rsync my files to my vps. Recursive. Transfer modification times. Compress. Partial transfer. Remove deleted files.
+alias website="rsync -rtzP --delete --exclude .git/objects/ ~/projects/davisstanko/ root@davisstanko.com:/var/www/davisstanko"
+# Backup my files to a specified drive. Transfer modification times. Recursive. Compress. Partial transfer. Keep permisions. Exclude replaceable folders due to drive size. Remove deleted files.
+alias backup="sudo rsync -rtzPp --exclude .local/share/Steam/ --exclude film/ --exclude .heroic --exclude .cache --exclude .config/syncthing --delete ~/ /mnt/2tb"
+alias backup_touro="sudo rsync -rtzPp --exclude .local/share/Steam/ --exclude film/ --exclude .heroic --exclude .cache --exclude .config/syncthing --delete ~/ /mnt/touro"
+alias backup_transcend="sudo rsync -rtzPp --exclude .local/share/Steam/ --exclude film/ --exclude .heroic --exclude .cache --exclude .config/syncthing --delete ~/ /mnt/transcend"
+
+# Utilities
+# search
+alias search="ls | grep -i"
+# newsboat
+alias news="newsboat"
+# nmtui
+alias nmt="nmtui"
+# Backup Package list
+alias pack="pacman -Qqe > ~/.packages"
+# Youtube dowloader
+alias yt="yt-dlp -i" # Ignore errors.
+alias yta="yt -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --output \"%(title)s.mp3\""
+# Sort directories by size
+alias sortsize="du -h --max-depth=1 | sort -h"
+# See top 10 directories
+alias bloat="du -h --max-depth=1 2> /dev/null | sort -hr | tail -n +2 | head"
+# Convert all files in current directory
+alias webm="for i in *.webm; do ffmpeg -i "$i" "${i%.*}".mp4; rm "$i"; done"
+alias webp="for i in *.webp; do ffmpeg -i "$i" "${i%.*}".png; rm "$i"; done"
+# Start recording a 1080p/60fps video
+alias screenrecord="ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 output.mp4"
+# Bluetoothctl
+alias bt="bluetoothctl"
+# Neovim
+vi() {
+  if [ $# -eq 0 ]; then
+    # If no arguments are provided, run 'nvim .' to open current directory
+    nvim .
+  else
+    # If arguments are provided, run 'nvim' with those arguments
+    nvim "$@"
+  fi
+}
+
+# pdf
+alias zat="zathura --fork"
+
+# gnereate playlist files
+playlist() {
+    songs_directory="$HOME/music/songs"
+    playlist_directory="$HOME/music/playlists"
+
+    # Iterate over each subdirectory in the songs directory
+    for dir in "$songs_directory"/*; do
+        # Extract the directory name
+        directory_name=$(basename "$dir")
+
+        # Create the playlist file path
+        playlist_file="${playlist_directory}/${directory_name}.m3u"
+
+        # Use find command to locate all MP3 files in the current directory and its subdirectories
+        find "$dir" -type f -name "*.mp3" > "$playlist_file"
+
+        echo "Playlist file '${playlist_file}' created successfully."
+    done
+}

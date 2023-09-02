@@ -13,8 +13,6 @@ end
 local packer_bootstrap = ensure_packer()
 
 -- Reload configurations if we modify plugins.lua
--- Hint
---     <afile> - replaced with the filename of the buffer being manipulated
 vim.cmd([[
   augroup packer_user_config
     autocmd!
@@ -23,13 +21,7 @@ vim.cmd([[
 ]])
 
 
--- Install plugins here - `use ...`
--- Packer.nvim hints
---     after = string or list,           -- Specifies plugins to load before this plugin. See "sequencing" below
---     config = string or function,      -- Specifies code to run after this plugin is loaded
---     requires = string or list,        -- Specifies plugin dependencies. See "dependencies".
---     ft = string or list,              -- Specifies filetypes which load this plugin.
---     run = string, function, or table, -- Specify operations to be run after successful installs/updates of a plugin
+-- Install plugins here
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
@@ -38,16 +30,14 @@ return require('packer').startup(function(use)
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
     -- Utilities
+    use 'tpope/vim-fugitive'
     use 'nvim-telescope/telescope.nvim'
     use 'tpope/vim-commentary'
+    use 'barrett-ruth/live-server.nvim'
     use 'ap/vim-css-color'
     -- NerdTree
     use 'preservim/nerdtree'
     use 'Xuyuanp/nerdtree-git-plugin'
-    -- Live Previews
-    -- I use glow for markdown preview
-    use 'barrett-ruth/live-server.nvim'
-    use 'lervag/vimtex'
     -- Copilot, LSP, Autocompletion
     use 'github/copilot.vim'
     use {
