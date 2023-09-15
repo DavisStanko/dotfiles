@@ -3,7 +3,7 @@
 This repository contains my personal configuration files, also known as dotfiles. These files configure various programs that I use daily on my computer which runs Arch Linux with the i3 window manager.
 
 Below is a sample of what my desktop looks like. For a more detailed description of the programs and configuration files included in this repository, please see the table of contents.
-![screenshot](dots.png)
+![screenshot](demo.png)
 
 ## Table of Contents
 
