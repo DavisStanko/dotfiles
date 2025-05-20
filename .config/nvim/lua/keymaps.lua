@@ -21,9 +21,6 @@ local builtin = require('telescope.builtin')
 -- Find files with leader + f
 vim.keymap.set('n', '<leader>f', builtin.find_files, {})
 
--- Open terminal
-vim.keymap.set('n', '<leader>t', ':split | resize 10 | terminal<CR>', {})
-
 -- Split navigation shortcuts
 vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
