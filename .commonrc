@@ -43,8 +43,6 @@ backup_to() {
 # Utilities
 # search
 alias search="ls | grep -i"
-# newsboat
-alias news="newsboat"
 # nmtui
 alias nmt="nmtui"
 # Backup Package list
