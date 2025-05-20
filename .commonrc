@@ -45,8 +45,6 @@ backup_to() {
 alias search="ls | grep -i"
 # nmtui
 alias nmt="nmtui"
-# Backup Package list
-alias pack="pacman -Qqe > ~/.packages"
 # Youtube dowloader
 alias yt="yt-dlp -i" # Ignore errors.
 alias yta="yt -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --output \"%(title)s.mp3\""
