@@ -1,7 +1,14 @@
 -- Quality of life
-vim.o.go = 'a'                    -- enable mouse
 vim.o.mouse = 'a'                 -- enable mouse
 vim.o.clipboard = 'unnamedplus'   -- use system clipboard
+
+-- UI config
+vim.o.title = true                -- set title of window to name of file
+vim.opt.number = true             -- show the current line number absolutely
+vim.opt.relativenumber = true     -- show other line numbers relative to the current line
+vim.opt.cursorline = true         -- highlight cursor line underneath the cursor horizontally
+vim.opt.splitbelow = true         -- open new vertical split bottom
+vim.opt.splitright = true         -- open new horizontal splits right
 
 -- Formatting
 vim.opt.tabstop = 4               -- number of visual spaces per TAB
@@ -21,14 +28,6 @@ vim.cmd([[
   autocmd BufWritePre * call cursor(currPos[1], currPos[2])
 ]])
 
--- UI config
-vim.o.title = true                -- set title of window to name of file
-vim.opt.number = true             -- show the current line number absolutely
-vim.opt.relativenumber = true     -- show other line numbers relative to the current line
-vim.opt.cursorline = true         -- highlight cursor line underneath the cursor horizontally
-vim.opt.splitbelow = true         -- open new vertical split bottom
-vim.opt.splitright = true         -- open new horizontal splits right
-
 -- Status bar
 vim.cmd('set noshowmode')         -- hide the default mode text
 vim.g.airline_powerline_fonts = 1 -- use powerline fonts
@@ -43,10 +42,9 @@ vim.opt.smartcase = true          -- but make it case sensitive if an uppercase 
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }  -- completion options
 vim.o.wildmode = 'longest,list,full'                     -- command-line completion mode
 
--- Open terminal in insert mode
-vim.cmd([[
-  autocmd TermOpen * startinsert
-]])
+vim.g.copilot_filetypes = {
+    ['*'] = true,
+}
 
 -- NERDTree
 vim.cmd([[
