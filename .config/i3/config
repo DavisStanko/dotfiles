@@ -57,10 +57,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # media keys: Prefer firefox, then spotify, then the most recent player.
-bindsym XF86AudioPlay exec --no-startup-id "playerctl --player=firefox,mpv,%any play-pause"
-bindsym XF86AudioNext exec --no-startup-id "playerctl --player=firefox,mpv,%any next"
-bindsym XF86AudioPrev exec --no-startup-id "playerctl --player=firefox,mpv,%any previous"
-bindsym XF86AudioStop exec --no-startup-id "playerctl --player=firefox,mpv,%any stop"
+bindsym XF86AudioPlay exec --no-startup-id "playerctl --player=firefox,mpv,spotify,%any play-pause"
+bindsym XF86AudioNext exec --no-startup-id "playerctl --player=firefox,mpv,spotify,%any next"
+bindsym XF86AudioPrev exec --no-startup-id "playerctl --player=firefox,mpv,spotify,%any previous"
+bindsym XF86AudioStop exec --no-startup-id "playerctl --player=firefox,mpv,spotify,%any stop"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
