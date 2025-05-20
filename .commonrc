@@ -57,6 +57,10 @@ alias webm="for i in *.webm; do ffmpeg -i "$i" "${i%.*}".mp4; rm "$i"; done"
 alias webp="for i in *.webp; do ffmpeg -i "$i" "${i%.*}".png; rm "$i"; done"
 # Start recording a 1080p/60fps video
 alias screenrecord="ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 output.mp4"
+# Return the number of files in each subdirectory sorted
+numfiles() {
+    find . -mindepth 1 -maxdepth 1 -type d -exec sh -c 'echo "$(find "{}" -type f | wc -l) $(basename "{}")"' \; | sort -nr
+}
 # Bluetoothctl
 alias bt="bluetoothctl"
 # Neovim
