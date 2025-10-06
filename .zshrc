@@ -86,3 +86,5 @@ PERL_MB_OPT="--install_base \"/home/davis/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/davis/perl5"; export PERL_MM_OPT;
 
 export PATH=$PATH:/home/davis/.spicetify
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
