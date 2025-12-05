@@ -1,6 +1,4 @@
 # ~/.commonrc
-setxkbmap -option "caps:swapescape"
-
 # Defaults
 export EDITOR="code"
 export TERMINAL="alacritty"
@@ -21,10 +19,8 @@ alias sxiv="sxiv -abs f" # Animate gifs. No bar. Fit image.
 alias vps="ssh root@davisstanko.com"
 # Rsync my files to my vps. Recursive. Transfer modification times. Compress. Partial transfer. Remove deleted files.
 alias website="rsync -rtzP --delete --exclude .git/objects/ ~/projects/davisstanko/ root@davisstanko.com:/var/www/davisstanko"
-# Backup my files to a specified dir. Transfer modification times. Recursive. Compress. Partial transfer. Keep permissions. Exclude replaceable folders due to drive size. Remove deleted files.
+# Backup my files to a specified dir. Transfer modification times. Recursive. Compress. Partial transfer. Keep permisions. Exclude replaceable folders due to drive size. Remove deleted files.
 backup() {
-  local dest="/mnt/$1"
-
   rsync -rtzPp \
     --exclude film \
     --exclude .local \
@@ -37,9 +33,8 @@ backup() {
     --exclude .wine \
     --exclude .config/syncthing \
     --delete \
-    ~/ "$dest/"
+    ~/ "/mnt/$1"
 }
-
 
 # Utilities
 # search
