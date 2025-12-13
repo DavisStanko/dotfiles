@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- Styling
-    use 'wittyjudge/gruvbox-material.nvim'
+    use { "ellisonleao/gruvbox.nvim" }
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
     -- Utilities
