@@ -32,3 +32,26 @@ vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
+
+-- math
+vim.keymap.set('n', 'Q', function()
+  local cword = vim.fn.expand('<cWORD>')
+  local num_str = cword:match('-?%d+%.?%d*')
+  if not num_str then return end
+
+  local operation = vim.fn.input('Operation: ')
+  if operation == "" then return end
+
+  local expr = num_str .. operation
+  local fn, err = load("return " .. expr)
+  if not fn then
+    vim.notify('Invalid expression: ' .. expr, vim.log.levels.ERROR)
+    return
+  end
+
+  local result = fn()
+  -- Trim unnecessary trailing zeros from decimals (e.g. 10.0 -> 10)
+  local result_str = tostring(result):gsub('%.0$', '')
+
+  vim.cmd('normal! ciW' .. result_str)
+end, { desc = "Perform on-the-fly math on number under cursor" })
