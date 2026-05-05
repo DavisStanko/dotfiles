@@ -1,0 +1,13 @@
+# Ignore everything inside these three .config dirs except User/settings.json
+
+.config/Antigravity/**
+!.config/Antigravity/User/
+!.config/Antigravity/User/settings.json
+
+.config/Code/**
+!.config/Code/User/
+!.config/Code/User/settings.json
+
+.config/Cursor/**
+!.config/Cursor/User/
+!.config/Cursor/User/settings.json
