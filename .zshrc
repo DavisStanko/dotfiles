@@ -1,5 +1,4 @@
 # ~/.zshrc
-
 source ~/.commonrc
 
 # zsh specific
@@ -63,30 +62,5 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# open pdfs and edit tex files
-vilatex() {
-    if [ -z "$1" ]; then
-        echo "Usage: edittex <directory>"
-        return 1
-    fi
-
-    directory=$1
-
-    (find "$directory" -type f -name "*.pdf" -exec zathura {} +) & # Run zathura in the background
-    find "$directory" -type f -name "*.tex" -exec nvim {} + # Run vim in the current terminal
-}
-
 # Link to syntax highlighting:
 source ~/.config/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-
-PATH="/home/davis/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/davis/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/davis/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/davis/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/davis/perl5"; export PERL_MM_OPT;
-
-export PATH=$PATH:/home/davis/.spicetify
-
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-
-[ -f "/home/davis/.ghcup/env" ] && . "/home/davis/.ghcup/env" # ghcup-env

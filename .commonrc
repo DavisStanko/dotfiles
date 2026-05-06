@@ -43,22 +43,11 @@ backup() {
 # Utilities
 # copilot
 alias '??'='gh copilot -i'
-# search
-alias search="ls | grep -i"
-# nmtui
-alias nmt="nmtui"
 # Youtube dowloader
-alias yt="yt-dlp -i" # Ignore errors.
-alias yta="yt -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --output \"%(title)s.mp3\""
+alias yt="yt-dlp -i --no-playlist" # Ignore errors.
+alias yta="yt -x --no-playlist --audio-format mp3 --audio-quality 0 --embed-thumbnail --output \"%(title)s.mp3\""
 # Sort directories by size
 alias sortsize="du -h --max-depth=1 | sort -h"
-# See top 10 directories
-alias bloat="du -h --max-depth=1 2> /dev/null | sort -hr | tail -n +2 | head"
-# Convert all files in current directory
-alias webm="for i in *.webm; do ffmpeg -i "$i" "${i%.*}".mp4; rm "$i"; done"
-alias webp="for i in *.webp; do ffmpeg -i "$i" "${i%.*}".png; rm "$i"; done"
-# Start recording a 1080p/60fps video
-alias screenrecord="ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 output.mp4"
 # Return the number of files in each subdirectory sorted
 numfiles() {
     find . -mindepth 1 -maxdepth 1 -type d -exec sh -c 'echo "$(find "{}" -type f | wc -l) $(basename "{}")"' \; | sort -nr
