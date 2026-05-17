@@ -16,6 +16,19 @@ I use the gruvbox color scheme for my terminal and other programs.
 
 ## Programs
 
+### i3: a tiling window manager
+
+i3 is the most popular tiling window manger because it is lightweight, easy to use, and highly customizable. The configuration included in this repository has been modified to include a variety of useful features, including:
+
+* Gruvbox theme
+* Random wallpaper script
+* Gaps between windows (not available if using i3 non-gaps package which will be phased out in the future)
+* i3lock support
+* screenshot support (using maim)
+* normal vim keys (`hjkl`, not i3's default shifted vim keys `jkl;`)
+
+This config is highly personalized and is not a plug-and-play solution. I recommend users to familiarize themselves with the changes made and the keybindings used in order to fully take advantage of this configuration.
+
 ### Polybar: a status bar for the desktop environment
 
 Polybar is a lightweight and highly customizable bar that can be displayed at the top of the screen. I prefer it to i3's built in status bar. My configuration includes active workspaces displayed on the left, the active window's title displayed in the middle, and various system information such as volume, brightness, battery, and time displayed on the right. Some modules are able to be clicked for added functionality but no features require mouse use. This configuration allows for quick and easy access to important information and nothing more.
