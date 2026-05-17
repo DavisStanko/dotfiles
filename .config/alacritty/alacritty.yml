@@ -1,0 +1,5 @@
+colors:
+  primary:
+    background: "#282828"
+
+dynamic_title: true
