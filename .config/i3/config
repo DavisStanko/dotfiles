@@ -11,6 +11,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id picom
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec_always --no-startup-id setxkbmap -option caps:swapescape
+
+# refresh rate
+exec_always --no-startup-id xrandr --output DisplayPort-0 --mode 1920x1080 --rate 144.00
 
 # autotiling
 exec_always --no-startup-id autotiling
@@ -65,6 +69,9 @@ bindsym $mod+Return exec alacritty
 
 # start firefox
 bindsym $mod+w exec firefox
+
+# open thunderbird
+bindsym $mod+m exec thunderbird
 
 # sleep
 bindsym $mod+x exec systemctl suspend
@@ -194,3 +201,5 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+for_window [class="com.example.assignment4.ElectronicStoreView" instance="com.example.assignment4.ElectronicStoreView"] floating enable
