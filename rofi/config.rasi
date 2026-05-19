@@ -1,0 +1,10 @@
+configuration {
+	modi: 			"drun,run";
+	lines: 			13;
+	font: 			"monospace 10";
+	show-match: 		false;
+	separator-style: 	"solid";
+	hide-scrollbar: 	true;
+	show-icons: 		true;
+}
+@theme            "~/.config/rofi/theme/squared-everforest.rasi"
