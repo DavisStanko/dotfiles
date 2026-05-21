@@ -7,41 +7,40 @@ Below is a sample of what my desktop looks like. For a more detailed description
 
 ## Table of Contents
 
-* [Installation](#installation)
-* [Theme](#theme)
-* [Desktop Environment](#desktop-environment)
-  * [i3](#i3)
-    * [``.xinitrc``](#xinitrc)
-  * [Polybar](#polybar)
-  * [Rofi](#rofi)
-  * [Dunst](#dunst)
-  * [Neofetch](#neofetch)
-* [Shell](#shell)
-  * [zsh](#zsh)
-  * [kitty](#kitty)
-* [neovim](#neovim)
-  * [`init.lua`](#initlua)
-  * [`options.lua`](#optionslua)
-  * [`plugins.lua`](#pluginslua)
-  * [`keymaps.lua`](#keymapslua)
-  * [`colorscheme.lua`](#colorschemelua)
-  * [`lsp.lua`](#lsplua)
-  * [`config/nvim-cmp.lua`](#confignvim-cmplua)
-* [Media](#media)
-  * [mpv](#mpv)
-  * [mpd](#mpd)
-  * [ncmpcpp](#ncmpcpp)
-  * [sxiv](#sxiv)
-    * [``.Xresources``](#xresources---configures-x-window-system-resources)
-* [Wallpapers](#wallpapers)
-* [License](#license)
-
+- [Installation](#installation)
+- [Theme](#theme)
+- [Desktop Environment](#desktop-environment)
+  - [i3](#i3)
+    - [`.xinitrc`](#xinitrc)
+  - [Polybar](#polybar)
+  - [Rofi](#rofi)
+  - [Dunst](#dunst)
+  - [Neofetch](#neofetch)
+- [Shell](#shell)
+  - [zsh](#zsh)
+  - [kitty](#kitty)
+- [neovim](#neovim)
+  - [`init.lua`](#initlua)
+  - [`options.lua`](#optionslua)
+  - [`plugins.lua`](#pluginslua)
+  - [`keymaps.lua`](#keymapslua)
+  - [`colorscheme.lua`](#colorschemelua)
+  - [`lsp.lua`](#lsplua)
+  - [`config/nvim-cmp.lua`](#confignvim-cmplua)
+- [Media](#media)
+  - [mpv](#mpv)
+  - [mpd](#mpd)
+  - [ncmpcpp](#ncmpcpp)
+  - [sxiv](#sxiv)
+    - [`.Xresources`](#xresources---configures-x-window-system-resources)
+- [Wallpapers](#wallpapers)
+- [License](#license)
 
 ## Installation
 
 **Warning**
 
-*Blindly copying and pasting someone else's dotfiles can be dangerous. It is important to read and understand these configuration files before using them, and to modify them to suit your personal preferences and needs.*
+_Blindly copying and pasting someone else's dotfiles can be dangerous. It is important to read and understand these configuration files before using them, and to modify them to suit your personal preferences and needs._
 
 To use these dotfiles on your own system, you can simply copy paste the text from the desired file and paste it into your own. However, I recommend you only take the parts from mine that interest you and modify the rest for your personal use.
 
@@ -57,13 +56,13 @@ Gruvbox is a retro groove color scheme for Vim, terminal emulators, and other te
 
 i3 is the most popular tiling window manger because it is lightweight, easy to use, and highly customizable. The configuration included in this repository has been modified to include a variety of useful features, including:
 
-* Gaps between windows (not available if using i3 non-gaps package which will be phased out in the future)
-* Autotiling
-* i3lock support
-* normal vim keys (`hjkl`, not i3's default shifted vim keys `jkl;`)
-* caps lock and escape key swap
-* screenshot support (using maim)
-* Random wallpaper script using [derf/feh](https://github/com/derf/feh)
+- Gaps between windows
+- Autotiling
+- i3lock support
+- normal vim keys (`hjkl`, not i3's default shifted vim keys `jkl;`)
+- caps lock and escape key swap
+- screenshot support (using maim)
+- Random wallpaper script using [derf/feh](https://github/com/derf/feh)
 
 **Breaking changes**
 
@@ -74,7 +73,7 @@ This program's config in particular is highly personalized and is not a plug-and
 - Autostart programs. A handfull of programs are started automatically when i3 starts. If you do not have these programs installed, you will need to remove them from the config.
 - Hotkey programs. The programs I use most are bound to hotkeys. If you do not have these programs installed, these hotkeys will not work.
 
-#### ``.xinitrc``
+#### `.xinitrc`
 
 This file configures the command `startx` to open i3. This is nessecary since I do not use a login manager such as GDM or LightDM in the intrest of simplicity and speed.
 
@@ -118,15 +117,17 @@ The configuration included in this repository has been modified to include the d
 I prefer to use zsh as my shell since it's more feature rich and modern, but my configuration files also work with bash. The configuration included in this repository has been modified to include a variety of useful features, including:
 
 #### zsh specific features
-* Syntax highlighting with [zdharma-continuum/fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
-* Better tab completion
-* Vi mode
+
+- Syntax highlighting with [zdharma-continuum/fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
+- Better tab completion
+- Vi mode
 
 #### Shell agnostic features
-* Useful aliases and functions (look in `.commonrc` to see them all)
-* Auto ls after cd
-* Informative prompt
-* Home, end, and delete keys work properly
+
+- Useful aliases and functions (look in `.commonrc` to see them all)
+- Auto ls after cd
+- Informative prompt
+- Home, end, and delete keys work properly
 
 Most shell configuration is in the `.commonrc` file so that it can be shared between bash and zsh. The `.zshrc` and `.bashrc` files are used to set features specific to each shell.
 
@@ -149,6 +150,7 @@ If you have never used Vim bindings before, you should look into them. They are 
 The configuration included in this repository has been modified to include a variety of useful features across multiple configuration files.
 
 ### `init.lua`
+
 This file just imports the other configuration files.
 
 ### `options.lua`
@@ -187,7 +189,6 @@ This file configures [wbthomason/packer.nvim](https://github.com/wbthomason/pack
   - [github/copilot.vim](https://github.com/github/copilot.vim)
   - [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim)
 
-
 ### `keymaps.lua`
 
 This file configures my custom keybindings and commands for neovim.
@@ -220,6 +221,7 @@ This file configures autocompletion and it's hotkeys.
 mpv is better than VLC.
 
 I've made the following changes to the default configuration:
+
 - Start in windowed mode
 - Display images indefinitely
 - Automatically select English audio tracks and subtitles when available
@@ -247,7 +249,7 @@ Simple X Image Viewer is a simple image viewer for the X Window System. Need I s
 
 The configuration included in this repository has been modified to include a convenient shortcut `Ctrl+X Ctrl+D` for deleting the currently displayed image.
 
-#### ``.Xresources`` - configures X Window System resources
+#### `.Xresources` - configures X Window System resources
 
 Xresources is a database that stores the default X Window System resources values.
 
