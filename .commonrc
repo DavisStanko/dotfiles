@@ -32,6 +32,8 @@ alias backup_touro="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --e
 alias backup_transcend="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude media/film/ --delete ~/ /mnt/transcend"
 
 # Utilities
+# search
+alias search="ls | grep -i"
 # newsboat
 alias news="newsboat"
 # nmtui
@@ -40,7 +42,7 @@ alias nmt="nmtui"
 alias pack="pacman -Qqe > ~/.packages"
 # Youtube dowloader
 alias yt="yt-dlp -i" # Ignore errors.
-alias yta="yt -x -f 'ba' --embed-thumbnail" # Extract best audio. Embed Thumbnail.
+alias yta="yt -x -f 'ba' --embed-thumbnail --output \"%(title)s\"" # Extract best audio. Embed Thumbnail. Title = Video title.
 # Sort directories by size
 alias sortsize="du -h --max-depth=1 | sort -h"
 # See top 10 directories
@@ -60,27 +62,27 @@ alias vi="nvim"
 pic() {
   find $1 -type f | shuf | sxiv -abis f &! exit
 }
-# Shuffle music in specified directory and play them with mpv
-music() {
-    mpv --shuffle ~/music/"$1" &! exit
-}
-song() {
-   local song_path
-   song_path=$(find ~/music -type f -iname "*$1*" -print -quit)
-   if [[ -n "$song_path" ]]; then
-       mpv "$song_path"
-   else
-       echo "Song not found."
-   fi
-}
 
 # Shuffle videos in working directory and play them with mpv.
 alias vid="mpv --shuffle . &! exit"
 # pdf
 alias zat="zathura --fork"
 
-# auto complete music
-_music_completion() {
-    reply=($HOME/music/*(/:t))
+playlist() {
+    songs_directory="$HOME/music"
+    playlist_directory="$HOME/.playlists"
+
+    # Iterate over each subdirectory in the songs directory
+    for dir in "$songs_directory"/*; do
+        # Extract the directory name
+        directory_name=$(basename "$dir")
+
+        # Create the playlist file path
+        playlist_file="${playlist_directory}/${directory_name}.m3u"
+
+        # Use find command to locate all MP3 files in the current directory and its subdirectories
+        find "$dir" -type f -name "*.mp3" > "$playlist_file"
+
+        echo "Playlist file '${playlist_file}' created successfully."
+    done
 }
-compctl -K _music_completion music
