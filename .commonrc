@@ -1,4 +1,5 @@
 # ~/.commonrc
+setxkbmap -option "caps:swapescape"
 
 # Defaults
 export EDITOR="code"
