@@ -66,6 +66,7 @@ pic() {
 
 # Shuffle videos in working directory and play them with mpv.
 alias vid="mpv --shuffle . &! exit"
+
 # pdf
 alias zat="zathura --fork"
 
