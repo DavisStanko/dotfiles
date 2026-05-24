@@ -11,7 +11,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id picom
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
-exec_always --no-startup-id setxkbmap -option caps:swapescape
 
 # refresh rate
 exec_always --no-startup-id xrandr --output DisplayPort-0 --mode 1920x1080 --rate 144.00
