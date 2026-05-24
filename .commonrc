@@ -43,7 +43,7 @@ alias nmt="nmtui"
 alias pack="pacman -Qqe > ~/.packages"
 # Youtube dowloader
 alias yt="yt-dlp -i" # Ignore errors.
-alias yta="yt -x -f 'ba' --embed-thumbnail --output \"%(title)s\"" # Extract best audio. Embed Thumbnail. Title = Video title.
+alias yta="yt -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --output \"%(title)s.mp3\""
 # Sort directories by size
 alias sortsize="du -h --max-depth=1 | sort -h"
 # See top 10 directories
