@@ -18,6 +18,7 @@ Below is a sample of what my desktop looks like. For a more detailed description
   * [Neovim: a text editor](#neovim-a-text-editor)
   * [Dunst: a notification daemon](#dunst-a-notification-daemon)
   * [MPV: a media player](#mpv-a-media-player)
+  * [MPD and ncmpcpp: a music player daemon and client](#mpd-and-ncmpcpp-a-music-player-daemon-and-client)
   * [Neofetch: a system information tool](#neofetch-a-system-information-tool)
   * [Newsboat: a RSS feed reader](#newsboat-a-rss-feed-reader)
   * [Sxiv: an image viewer](#sxiv-an-image-viewer)
@@ -91,7 +92,11 @@ Dunst is a lightweight and customizable notification daemon. The configuration i
 
 ### MPV: a media player
 
-MPV is a powerful and lightweight media player. This configuration makes MPV start in windowed mode rather than fullscreen, display images indefinitely, and automatically selects English audio tracks and subtitles when available. Most importantly, it includes mpris support meaning media keys will work with MPV.
+MPV is a powerful and lightweight media player. This configuration makes MPV start in windowed mode rather than fullscreen, display images indefinitely, and automatically selects English audio tracks and subtitles when available. Most importantly, it includes mpris support meaning media keys will work with MPV as well as a script that allows the deletion of the currently playing file.
+
+### MPD and ncmpcpp: a music player daemon and client
+
+MPD is to music what MPV is to video. It is a powerful and lightweight music player daemon. MPD shouldn't be used directly, but rather with a client such as ncmpcpp. The MPD configuration is very simple and only includes the location of songs and playlists along with audio visualization support. The ncmpcpp configuration is more complex but mostly boils down to Vim keybindings and minor cosmetic changes.
 
 ### Neofetch: a system information tool
 
