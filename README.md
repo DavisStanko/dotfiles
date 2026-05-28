@@ -31,15 +31,30 @@ Below is a sample of what my desktop looks like. For a more detailed description
 
 Blindly copying and pasting someone else's dotfiles can be dangerous because it can overwrite your existing configuration files and potentially cause problems with your system. It is important to read and understand the configuration files before using them, and to modify them to suit your personal preferences and needs.
 
-## Shell
-
-I prefer to use zsh as my shell since it's more feature rich and modern, but my configuration files also work with bash.
-
 ## Theme
 
 I use the gruvbox color scheme for my terminal and other programs.
 
 ## Programs
+
+### ZSH: a shell
+
+I prefer to use zsh as my shell since it's more feature rich and modern, but my configuration files also work with bash. The configuration included in this repository has been modified to include a variety of useful features, including:
+
+#### ZSH specific features
+* Syntax highlighting
+* Better tab completion
+* Vi mode
+
+#### POSIX shell features
+* Useful aliases and functions
+* Auto ls after cd
+* Informative prompt
+* Caps lock and escape key swap
+* Home, end, and delete keys work properly
+
+
+Most shell configuration is in the `.commonrc` file so that it can be shared between bash and zsh. The `.zshrc` and `.bashrc` files are used to set features specific to each shell.
 
 ### i3: a tiling window manager
 
