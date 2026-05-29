@@ -26,7 +26,6 @@ Below is a sample of what my desktop looks like. For a more detailed description
 * [I have made some minor modifications to the following files:](#i-have-made-some-minor-modifications-to-the-following-files)
   * [.xinitrc](#xinitrc)
   * [.Xresources: used to configure the appearance of programs that use the X Resource Manager](#xresources-used-to-configure-the-appearance-of-programs-that-use-the-x-resource-manager)
-  * [.xprofile: used to set environment variables and start programs when logging in to the system](#xprofile-used-to-set-environment-variables-and-start-programs-when-logging-in-to-the-system)
 
 ## Foreword
 
