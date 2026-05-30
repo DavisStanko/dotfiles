@@ -51,7 +51,7 @@ alias bloat="du -h --max-depth=1 2> /dev/null | sort -hr | tail -n +2 | head"
 alias webm="for i in *.webm; do ffmpeg -i "$i" "${i%.*}".mp4; rm "$i"; done"
 alias webp="for i in *.webp; do ffmpeg -i "$i" "${i%.*}".png; rm "$i"; done"
 # Start recording a 1080p/60fps video
-alias screenrecord="ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 output.mkv"
+alias screenrecord="ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 output.mp4"
 # Bluetoothctl
 alias bt="bluetoothctl"
 # neovim
