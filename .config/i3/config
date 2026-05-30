@@ -12,6 +12,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
+exec --no-startup-id mpd
+exec --no-startup-id mpDris2
+
 # refresh rate
 exec_always --no-startup-id xrandr --output DisplayPort-0 --mode 1920x1080 --rate 144.00
 
