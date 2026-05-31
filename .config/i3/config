@@ -80,9 +80,6 @@ bindsym $mod+x exec systemctl suspend
 # email
 bindsym XF86Mail exec xdg-open 'https://mail.google.com/mail/u/0/#inbox='
 
-# calculator
-bindsym XF86Calculator exec galculator
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
