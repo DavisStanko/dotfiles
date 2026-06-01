@@ -39,7 +39,7 @@ To use these dotfiles on your own system, you can simply copy paste the text fro
 
 ## Theme
 
-I use the gruvbox color scheme for my terminal and other programs.
+I use the Gruvbox color scheme for my desktop environment. Gruvbox is a retro groove color scheme for Vim, terminal emulators, and other text-based applications. It's colors are available at [morhetz/gruvbox](https://github.com/morhetz/gruvbox).
 
 ## Programs
 
