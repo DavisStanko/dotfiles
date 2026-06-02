@@ -246,7 +246,7 @@ sxiv uses this for theming so this file is used to set the colors to match the G
 
 ## Wallpapers
 
-I have included a folder of wallpapers in the repository meant to go well with the Gruvbox theme and the i3 config random wallpaper script.
+I have included a directory `.config/wallpapers` with wallpapers meant to go well with the Gruvbox theme and to work the i3 config random wallpaper script.
 
 ## License
 
