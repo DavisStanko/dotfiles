@@ -61,3 +61,6 @@ vim.cmd([[
 
 -- live-server
 require('live-server').setup(opts)
+
+-- VimTex
+vim.g.vimtex_view_method = 'zathura'
