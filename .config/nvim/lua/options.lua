@@ -53,3 +53,8 @@ if vim.fn.has('nvim') == 1 then
 else
   vim.g.NERDTreeBookmarksFile = '~/.vim' .. '/NERDTreeBookmarks'
 end
+
+-- set autochdir
+vim.cmd([[
+  autocmd BufEnter * silent! lcd %:p:h
+]])
