@@ -140,7 +140,7 @@ Terminals are very simple programs. I like Alacritty because it works. If you wa
 ## neovim
 
 neovim is just Vim but better. If you currently use Vim your current `init.vim` will work with neovim. There is no reason not to switch.
- 
+
 If you have never used Vim bindings before, you should look into them. They are the most efficient way to edit text. If you are interested in learning Vim simply using Vimtutor which is a interactive text tutorial that comes with Vim and neovim. If you would rather watch a video, I recommend you watch [The Primeagen's](https://www.youtube.com/@ThePrimeagen) playlist [Vim As Your Editor](https://www.youtube.com/watch?v=X6AR2RMB5tE&list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R&pp=iAQB) on YouTube. This will teach you everything you need to know about Vim.
 
 The configuration included in this repository has been modified to include a variety of useful features across multiple configuration files.
