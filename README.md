@@ -171,9 +171,15 @@ This file configures [wbthomason/packer.nvim](https://github.com/wbthomason/pack
   - [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 - Utilities
   - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-  - [preservim/nerdtree](https://github.com/preservim/nerdtree)
   - [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
   - [ap/vim-css-color](https://github.com/ap/vim-css-color)
+- NerdTree
+  - [preservim/nerdtree](https://github.com/preservim/nerdtree)
+  - [Xuyuanp/nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
+- Live Previews
+  - I use [charmbracelet/glow](https://github.com/charmbracelet/glow) to preview markdown files, but it is not a neovim plugin. It is a standalone program.
+  - [barrett-ruth/live-server.nvim](https://github.com/barrett-ruth/live-server.nvim)
+  - [lervag/vimtex](https://github.com/lervag/vimtex)
 - Copilot, LSP, Autocompletetion
   - [github/copilot.vim](https://github.com/github/copilot.vim)
   - [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim)
