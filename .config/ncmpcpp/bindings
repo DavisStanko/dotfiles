@@ -1,6 +1,4 @@
-def_key "="
-    volume_up
-
+# Vim keys
 def_key "j"
     scroll_down
 def_key "k"
@@ -9,7 +7,6 @@ def_key "h"
     previous_column
 def_key "l"
     next_column
-
 def_key "ctrl-u"
     page_up
 def_key "ctrl-d"
@@ -18,17 +15,10 @@ def_key "u"
     page_up
 def_key "d"
     page_down
-
 def_key "n"
     next_found_item
 def_key "N"
     previous_found_item
-
-# not used but bound
-def_key "J"
-    move_sort_order_down
-def_key "K"
-    move_sort_order_up
 def_key "h"
   jump_to_parent_directory
 def_key "l"
@@ -46,6 +36,14 @@ def_key "U"
 def_key "x"
   delete_playlist_items
 
+# Layouts
+# Disabled layouts
+# Search Engine (/ to search works fine)
+# Media Library (Too much clutter to be worthwhile)
+# Tag editor (Tiny tag editor still works)
+# Outputs (These never change)
+# Clock (Already have one)
+
 def_key "1"
   show_playlist
 def_key "2"
@@ -55,12 +53,14 @@ def_key "3"
 def_key "4"
   show_visualizer
 def_key "5"
-  show_lyrics
+  dummy
 def_key "6"
   dummy
 def_key "7"
   dummy
 def_key "8"
   dummy
-def_key "9"
-  dummy
+
+# Raise volume without shift
+def_key "="
+  volume_up
