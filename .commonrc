@@ -14,11 +14,8 @@ alias rm="rm -vI" # Verbose. Prompt once for 3+ files or -r.
 alias mkd="mkdir -pv" # Make parent directory. Verbose.
 alias ls="ls -hN --color=auto --group-directories-first" # Human readable. Print without quotes. Colorized. Directories dispalyed first.
 alias grep="grep --color=auto" # Colorized
-alias sxiv="sxiv -abs f" # Animate gifs. No bar. Fit image.
 
 # Personal.
-# SSH into VPS
-alias vps="ssh root@davisstanko.com"
 # Backup my files to a specified dir. Transfer modification times. Recursive. Compress. Partial transfer. Keep permissions. Exclude replaceable folders due to drive size. Remove deleted files.
 backup() {
   local dest="/mnt/$1"
@@ -65,10 +62,7 @@ vi() {
   fi
 }
 
-# pdf
-alias zat="zathura --fork"
-
-# gnereate playlist files
+# generate playlist files
 playlist() {
     songs_directory="$HOME/music/songs"
     playlist_directory="$HOME/music/playlists"
