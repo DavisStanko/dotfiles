@@ -17,8 +17,8 @@ alias grep="grep --color=auto" # Colorized
 alias sxiv="sxiv -abs f" # Animate gifs. No bar. Fit image.
 
 # Personal.
-# Open ToDo list
-alias plan="vi ~/.plan"
+# Open ToDo list in vim split vertically
+alias plan="vi -O ~/.plan/1 ~/.plan/2"
 # SSH into VPS
 alias vps="ssh root@davisstanko.com"
 # Rsync my files to my vps. Recursive. Transfer modification times. Compress. Partial transfer. Remove deleted files.
