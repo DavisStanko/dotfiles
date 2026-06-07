@@ -23,12 +23,10 @@ alias plan="vi -O ~/.plan/1 ~/.plan/2"
 alias vps="ssh root@davisstanko.com"
 # Rsync my files to my vps. Recursive. Transfer modification times. Compress. Partial transfer. Remove deleted files.
 alias website="rsync -rtzP --delete --exclude .git/objects/ ~/projects/davisstanko/ root@davisstanko.com:/var/www/davisstanko"
-# Backup my files to a specified drive. Transfer modification times. Recursive. Compress. Partial transfer. Exclude replaceable folders due to drive size. Remove deleted files.
-alias backup="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude film/ --exclude games/ --delete ~/ /mnt/2tb"
-# alt backup touro
-alias backup_touro="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude film/ --exclude games/ --delete ~/ /mnt/touro"
-# alt backup transend
-alias backup_transcend="sudo rsync -rtzP --exclude .bitmonero/ --exclude .cache/ --exclude .local/ --exclude .mozilla/ --exclude .npm/ --exclude .config/Code/ --exclude .config/discord/ --exclude .gradle/ --exclude .vpython_cipd_cache/ --exclude .vpython-root/ --exclude film/ --exclude games/ --delete ~/ /mnt/transcend"
+# Backup my files to a specified drive. Transfer modification times. Recursive. Compress. Partial transfer. Keep permisions. Exclude replaceable folders due to drive size. Remove deleted files.
+alias backup="sudo rsync -rtzPp --exclude .local/share/Steam/ --exclude film/ --exclude .heroic --exclude .cache --exclude .config/syncthing --delete ~/ /mnt/2tb"
+alias backup_touro="sudo rsync -rtzPp --exclude .local/share/Steam/ --exclude film/ --exclude .heroic --exclude .cache --exclude .config/syncthing --delete ~/ /mnt/touro"
+alias backup_transcend="sudo rsync -rtzPp --exclude .local/share/Steam/ --exclude film/ --exclude .heroic --exclude .cache --exclude .config/syncthing --delete ~/ /mnt/transcend"
 
 # Utilities
 # search
@@ -64,18 +62,10 @@ vi() {
   fi
 }
 
-# Media
-# Shuffle pictures in working directory and display them with sxiv
-pic() {
-  find $1 -type f | shuf | sxiv -abis f &! exit
-}
-
-# Shuffle videos in working directory and play them with mpv.
-alias vid="mpv --shuffle . &! exit"
-
 # pdf
 alias zat="zathura --fork"
 
+# gnereate playlist files
 playlist() {
     songs_directory="$HOME/music/songs"
     playlist_directory="$HOME/music/playlists"
