@@ -9,6 +9,8 @@ vim.opt.softtabstop = 4           -- number of spaces in tab when editing
 vim.opt.shiftwidth = 4            -- insert 4 spaces on a tab
 vim.opt.expandtab = true          -- tabs are spaces
 vim.o.linebreak = true            -- wrap lines at convenient points
+vim.opt.breakindent = true        -- indent wrapped lines
+
 vim.cmd("autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
 -- don't continue comments on newline
 vim.cmd([[
@@ -26,6 +28,10 @@ vim.opt.relativenumber = true     -- show other line numbers relative to the cur
 vim.opt.cursorline = true         -- highlight cursor line underneath the cursor horizontally
 vim.opt.splitbelow = true         -- open new vertical split bottom
 vim.opt.splitright = true         -- open new horizontal splits right
+
+-- Status bar
+vim.cmd('set noshowmode')         -- hide the default mode text
+vim.g.airline_powerline_fonts = 1 -- use powerline fonts
 
 -- Searching
 vim.opt.incsearch = true          -- search as characters are entered
@@ -61,6 +67,3 @@ vim.cmd([[
 
 -- live-server
 require('live-server').setup(opts)
-
--- VimTex
-vim.g.vimtex_view_method = 'zathura'
