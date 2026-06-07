@@ -15,7 +15,7 @@ local cmp_action = require('lsp-zero').cmp_action()
 cmp.setup({
   mapping = {
     -- `Enter` key to confirm completion
-    ['<CR>'] = cmp.mapping.confirm({select = true}),
+    ['<C-CR>'] = cmp.mapping.confirm({select = true}),
 
     -- Select next and previous item
     ['<C-j>'] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Insert}),
