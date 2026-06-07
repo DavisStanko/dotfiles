@@ -9,7 +9,6 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id sh ~/.config/polybar/launch.sh
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id picom
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 exec --no-startup-id mpd
