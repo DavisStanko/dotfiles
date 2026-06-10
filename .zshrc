@@ -63,5 +63,18 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+# open pdfs and edit tex files
+vilatex() {
+    if [ -z "$1" ]; then
+        echo "Usage: edittex <directory>"
+        return 1
+    fi
+
+    directory=$1
+
+    (find "$directory" -type f -name "*.pdf" -exec zathura {} +) & # Run zathura in the background
+    find "$directory" -type f -name "*.tex" -exec nvim {} + # Run vim in the current terminal
+}
+
 # Link to syntax highlighting:
 source ~/.config/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
