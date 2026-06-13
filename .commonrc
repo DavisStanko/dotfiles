@@ -22,22 +22,20 @@ alias vps="ssh root@davisstanko.com"
 # Rsync my files to my vps. Recursive. Transfer modification times. Compress. Partial transfer. Remove deleted files.
 alias website="rsync -rtzP --delete --exclude .git/objects/ ~/projects/davisstanko/ root@davisstanko.com:/var/www/davisstanko"
 # Backup my files to a specified dir. Transfer modification times. Recursive. Compress. Partial transfer. Keep permisions. Exclude replaceable folders due to drive size. Remove deleted files.
-backup_to() {
-    local target="/mnt/$1"
-    
-    # Check if target exists and is mounted
-    if [ ! -d "$target" ]; then
-        echo "Error: Target directory $target does not exist or is not mounted."
-        return 1
-    fi
-    
-    # Common exclusions for all drives
-    local exclusions="--exclude film --exclude .local --exclude .heroic --exclude .cache --exclude .config/Code --exclude .thunderbird --exclude .mozilla --exclude .vscode --exclude .wine --exclude .config/syncthing"
-    
-    # Execute the backup
-    sudo rsync -rtzPp $exclusions --delete ~/ "$target"
-    
-    echo "Backup to $target completed."
+backup() {
+  rsync -rtzPp \
+    --exclude film \
+    --exclude .local \
+    --exclude .heroic \
+    --exclude .cache \
+    --exclude .config/Code \
+    --exclude .thunderbird \
+    --exclude .mozilla \
+    --exclude .vscode \
+    --exclude .wine \
+    --exclude .config/syncthing \
+    --delete \
+    ~/ "/mnt/$1"
 }
 
 # Utilities
