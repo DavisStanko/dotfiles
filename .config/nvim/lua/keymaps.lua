@@ -1,4 +1,4 @@
--- Set leader key to comma
+-- Set leader key to space
 vim.g.mapleader = " "
 
 -- Find and replace with S
