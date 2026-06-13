@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# title=$(playerctl --player=mpd -s metadata title)
-# artist=$(playerctl --player=mpd -s metadata artist)
-# status=$(playerctl --player=mpd -s status)
+title=$(playerctl --player=mpd -s metadata title)
+artist=$(playerctl --player=mpd -s metadata artist)
+status=$(playerctl --player=mpd -s status)
 
-title=$(playerctl --player=spotify -s metadata title)
-artist=$(playerctl --player=spotify -s metadata artist)
-status=$(playerctl --player=spotify -s status)
+# title=$(playerctl --player=spotify -s metadata title)
+# artist=$(playerctl --player=spotify -s metadata artist)
+# status=$(playerctl --player=spotify -s status)
 
 # If no artist is found, just display the title
 if [[ -z "$artist" ]]; then
