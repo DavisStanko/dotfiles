@@ -39,7 +39,6 @@ return require('packer').startup(function(use)
     use 'preservim/nerdtree'
     use 'Xuyuanp/nerdtree-git-plugin'
     -- Copilot, LSP, Autocompletion
-    use 'github/copilot.vim'
     use {
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v2.x',
