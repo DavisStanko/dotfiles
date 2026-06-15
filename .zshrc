@@ -88,3 +88,5 @@ PERL_MM_OPT="INSTALL_BASE=/home/davis/perl5"; export PERL_MM_OPT;
 export PATH=$PATH:/home/davis/.spicetify
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+[ -f "/home/davis/.ghcup/env" ] && . "/home/davis/.ghcup/env" # ghcup-env
