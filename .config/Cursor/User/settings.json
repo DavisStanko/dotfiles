@@ -1,0 +1,23 @@
+{
+    "window.commandCenter": 1,
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "git.autofetch": true,
+    "remote.SSH.remotePlatform": {
+        "davisstanko.com": "linux"
+    },
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+
+    // Fix Caps/Esc behavior with remaps by dispatching on keyCode instead of scanCode
+    "keyboard.dispatch": "keyCode",
+
+    // Vim extension: use system clipboard for y/p, and keep Vim keybindings enabled
+    "vim.useSystemClipboard": true,
+    "vim.enableNeovim": false,
+
+    // Let Cursor handle these keys even in Vim normal mode
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-a>": false
+    }
+}

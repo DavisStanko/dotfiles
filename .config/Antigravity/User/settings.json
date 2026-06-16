@@ -1,0 +1,443 @@
+{
+  "python.showStartPage": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.iconTheme": "material-icon-theme",
+  "python.languageServer": "Pylance",
+  "editor.formatOnSave": true,
+  "python.autoComplete.addBrackets": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "liveServer.settings.donotVerifyTags": true,
+  "git.enableSmartCommit": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "security.workspace.trust.enabled": false,
+  "python.analysis.completeFunctionParens": true,
+  "glassit.alpha": 235,
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "editor.bracketPairColorization.enabled": true,
+  "explorer.confirmDelete": false,
+  "editor.linkedEditing": true,
+  "html.format.wrapLineLength": 0,
+  "terminal.integrated.fontFamily": "monospace",
+  "cSpell.userWords": [
+    "adduser",
+    "Archinstall",
+    "Battlesnake",
+    "Bidirection",
+    "bitcoinpopup",
+    "bogo",
+    "bootloaders",
+    "Botterfly",
+    "bpftrace",
+    "chauthtok",
+    "chrooting",
+    "clearenv",
+    "commandlist",
+    "davisstanko",
+    "discordbot",
+    "distro",
+    "Dotfiles",
+    "Edsby",
+    "EGID",
+    "EUID",
+    "execve",
+    "execvpe",
+    "filesystems",
+    "fpic",
+    "gameplay",
+    "getpwnam",
+    "hackathon",
+    "hideall",
+    "hrulefill",
+    "hydroseeder",
+    "Hydroseeding",
+    "leaderboard",
+    "malloc",
+    "memview",
+    "mmap",
+    "Monero",
+    "moneropopup",
+    "nohup",
+    "objdump",
+    "Pacman",
+    "Pathfinding",
+    "paypalpopup",
+    "physicalview",
+    "pkill",
+    "Polybar",
+    "recvfrom",
+    "reimagines",
+    "replit",
+    "runtimes",
+    "sendto",
+    "setgid",
+    "setuid",
+    "Stanko",
+    "testuser",
+    "textui",
+    "Therac",
+    "UEFI",
+    "unbootable",
+    "unranked",
+    "userlogin",
+    "userspace",
+    "Vero",
+    "virt",
+    "Xorg"
+  ],
+  "cSpell.enabledLanguageIds": [
+    "git-commit",
+    "html",
+    "latex",
+    "markdown",
+    "text"
+  ],
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": true,
+    "python": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "cSpell.ignoreWords": [
+    "PQXD",
+    "Xaftdh",
+    "cehgptla",
+    "gpxlg",
+    "hjkl",
+    "qxvnaexe"
+  ],
+  "git.allowForcePush": true,
+  "git.confirmForcePush": false,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "gitlens.hovers.currentLine.over": "line",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "python.formatting.provider": "black",
+  "flake8.args": [
+    "--max-line-length=10000",
+    "--ignore=E266"
+  ],
+  "editor.inlineSuggest.enabled": true,
+  "autopep8.args": [
+    "\"python.formatting.autopep8Args\": [\"--max-line-length\", \"9999\""
+  ],
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "off"
+  ],
+  "keyboard.dispatch": "keyCode",
+  "workbench.editorAssociations": {
+    "*.db": "sqlite-viewer.option"
+  },
+  "leetcode.workspaceFolder": "/home/davis/projects/leetcode",
+  "leetcode.defaultLanguage": "python3",
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.hint.commentDescription": false,
+  "leetcode.hint.commandShortcut": false,
+  "workbench.startupEditor": "none",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "vim.useSystemClipboard": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-c>": false,
+    "<C-f>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-d>": false,
+    "<C-i>": false,
+    "<C-n>": false,
+    "<C-k>": false,
+    "<C-o>": false,
+    "<C-w>": false,
+    "<C-s>": false,
+    "<C-z>": false
+  },
+  "editor.lineNumbers": "relative",
+  "editor.wordWrap": "on",
+  "git.openRepositoryInParentFolders": "always",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "lualatexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-lualatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "xelatexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-xelatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "latexmk_rconly",
+      "command": "latexmk",
+      "args": [
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": [
+        "%DOCFILE%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "rnw2tex",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+      ],
+      "env": {}
+    },
+    {
+      "name": "jnw2tex",
+      "command": "julia",
+      "args": [
+        "-e",
+        "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+      ],
+      "env": {}
+    },
+    {
+      "name": "jnw2texminted",
+      "command": "julia",
+      "args": [
+        "-e",
+        "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pnw2tex",
+      "command": "pweave",
+      "args": [
+        "-f",
+        "tex",
+        "%DOC_EXT%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pnw2texminted",
+      "command": "pweave",
+      "args": [
+        "-f",
+        "texminted",
+        "%DOC_EXT%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "tectonic",
+      "command": "tectonic",
+      "args": [
+        "--synctex",
+        "--keep-logs",
+        "--print",
+        "%DOC%.tex"
+      ],
+      "env": {}
+    }
+  ],
+  "latex-workshop.intellisense.bibtexJSON.replace": {},
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "pdflatex",
+      "tools": [
+        "pdflatex"
+      ]
+    },
+    {
+      "name": "latexmk",
+      "tools": [
+        "latexmk"
+      ]
+    },
+    {
+      "name": "latexmk (latexmkrc)",
+      "tools": [
+        "latexmk_rconly"
+      ]
+    },
+    {
+      "name": "latexmk (lualatex)",
+      "tools": [
+        "lualatexmk"
+      ]
+    },
+    {
+      "name": "latexmk (xelatex)",
+      "tools": [
+        "xelatexmk"
+      ]
+    },
+    {
+      "name": "pdflatex -> bibtex -> pdflatex * 2",
+      "tools": [
+        "pdflatex",
+        "bibtex",
+        "pdflatex",
+        "pdflatex"
+      ]
+    },
+    {
+      "name": "Compile Rnw files",
+      "tools": [
+        "rnw2tex",
+        "latexmk"
+      ]
+    },
+    {
+      "name": "Compile Jnw files",
+      "tools": [
+        "jnw2tex",
+        "latexmk"
+      ]
+    },
+    {
+      "name": "Compile Pnw files",
+      "tools": [
+        "pnw2tex",
+        "latexmk"
+      ]
+    },
+    {
+      "name": "tectonic",
+      "tools": [
+        "tectonic"
+      ]
+    }
+  ],
+  "cSpell.enabledFileTypes": {
+    "c": false,
+    "diff": false
+  },
+  "python.createEnvironment.trigger": "off",
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "remote.SSH.remotePlatform": {
+    "10.121.123.228": "linux"
+  },
+  "makefile.configureOnOpen": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.editor.enablePreview": false,
+  "editor.minimap.enabled": false,
+  "python.defaultInterpreterPath": "/bin/python",
+  "go.toolsManagement.autoUpdate": true,
+  "git.ignoreRebaseWarning": true,
+  "chat.tools.terminal.autoApprove": {
+    "make check": true,
+    "make component-test": true,
+    "make test": true,
+    "ls": true,
+    "grep": true,
+    "cat": true,
+    "go build": false,
+    "go test": false,
+    "go run": false,
+    "go install": false,
+    "go clean": false,
+    "go mod": false,
+    "go fmt": false,
+    "go vet": false,
+    "find": true
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "chat.editing.confirmEditRequestRemoval": false,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "/usr/bin/zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "bash (2)": {
+      "path": "/usr/bin/bash"
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "bash (2)",
+  "chat.agent.maxRequests": 100,
+  "chat.editing.confirmEditRequestRetry": false,
+  "redhat.telemetry.enabled": true,
+  "haskell.manageHLS": "GHCup",
+  "explorer.confirmPasteNative": false
+}
