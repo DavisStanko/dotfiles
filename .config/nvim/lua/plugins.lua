@@ -31,7 +31,6 @@ return require('packer').startup(function(use)
     use 'vim-airline/vim-airline-themes'
     -- Utilities
     use 'tpope/vim-fugitive'
-    use 'nvim-telescope/telescope.nvim'
     use 'tpope/vim-commentary'
     use 'barrett-ruth/live-server.nvim'
     use 'ap/vim-css-color'

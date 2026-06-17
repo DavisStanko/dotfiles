@@ -16,11 +16,6 @@ vim.cmd([[cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 -- Toggle NERDTree with leader + n
 vim.cmd([[map <leader>n :NERDTreeToggle<CR>]])
 
--- Telescope
-local builtin = require('telescope.builtin')
--- Find files with leader + f
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
-
 -- Split navigation shortcuts
 vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
