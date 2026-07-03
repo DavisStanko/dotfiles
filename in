@@ -5,18 +5,14 @@ REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Dotfiles tracked in this repo (relative to ~)
 FILES=(
-    .Xresources
     .bash_profile
     .bashrc
     .commonrc
-    .xinitrc
     .zshrc
     .config/Antigravity/User/settings.json
     .config/Code/User/settings.json
     .config/Cursor/User/settings.json
-    .config/dunst/dunstrc
     .config/fast-syntax-highlighting
-    .config/i3/config
     .config/kitty/kitty.conf
     .config/kitty/theme.conf
     .config/mpd/mpd.conf
@@ -34,15 +30,6 @@ FILES=(
     .config/nvim/lua/options.lua
     .config/nvim/lua/plugins.lua
     .config/nvim/plugin/packer_compiled.lua
-    .config/polybar/colors.ini
-    .config/polybar/config.ini
-    .config/polybar/launch.sh
-    .config/polybar/media.sh
-    .config/polybar/modules.ini
-    .config/rofi/config.rasi
-    .config/rofi/theme/squared-everforest.rasi
-    .config/rofi/theme/ultratheme.rasi
-    .config/sxiv/exec/key-handler
 )
 
 copied=0
