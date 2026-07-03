@@ -1,38 +1,49 @@
 # My Dotfiles
 
-This repository contains my personal configuration files, also known as dotfiles. These files configure various programs that I use daily on my computer which runs Fedora Workstation.
+This repository contains my personal configuration files, also known as dotfiles. These files configure various programs that I use daily on my computer which runs Fedora Linux.
 
 ## Table of Contents
 
+* [Syncing](#syncing)
 * [Installation](#installation)
-* [Theme](#theme)
-* [Desktop Environment](#desktop-environment)
-  * [i3](#i3)
-    * [``.xinitrc``](#xinitrc)
-  * [Polybar](#polybar)
-  * [Rofi](#rofi)
-  * [Dunst](#dunst)
-  * [Neofetch](#neofetch)
 * [Shell](#shell)
   * [zsh](#zsh)
+  * [bash](#bash)
+  * [`.commonrc`](#commonrc)
   * [kitty](#kitty)
-* [neovim](#neovim)
-  * [`init.lua`](#initlua)
-  * [`options.lua`](#optionslua)
-  * [`plugins.lua`](#pluginslua)
-  * [`keymaps.lua`](#keymapslua)
-  * [`colorscheme.lua`](#colorschemelua)
-  * [`lsp.lua`](#lsplua)
-  * [`config/nvim-cmp.lua`](#confignvim-cmplua)
+* [Editors](#editors)
+  * [neovim](#neovim)
+    * [`init.lua`](#initlua)
+    * [`options.lua`](#optionslua)
+    * [`plugins.lua`](#pluginslua)
+    * [`keymaps.lua`](#keymapslua)
+    * [`colorscheme.lua`](#colorschemelua)
+    * [`lsp.lua`](#lsplua)
+    * [`config/nvim-cmp.lua`](#confignvim-cmplua)
+  * [VS Code / Cursor / Antigravity](#vs-code--cursor--antigravity)
 * [Media](#media)
   * [mpv](#mpv)
   * [mpd](#mpd)
   * [ncmpcpp](#ncmpcpp)
-  * [sxiv](#sxiv)
-    * [``.Xresources``](#xresources---configures-x-window-system-resources)
 * [Wallpapers](#wallpapers)
 * [License](#license)
 
+
+## Syncing
+
+Two scripts are included to keep the repo in sync with the home directory:
+
+- **`in`** — copies dotfiles from `~` into this repository.
+- **`out`** — copies dotfiles from this repository into `~`.
+
+Run either script from the repo root:
+
+```bash
+./in   # pull changes from your home dir into the repo
+./out  # push changes from the repo into your home dir
+```
+
+Files not found at the source are skipped and reported. The scripts track the exact set of files listed in their `FILES` array.
 
 ## Installation
 
@@ -42,94 +53,51 @@ This repository contains my personal configuration files, also known as dotfiles
 
 To use these dotfiles on your own system, you can simply copy paste the text from the desired file and paste it into your own. However, I recommend you only take the parts from mine that interest you and modify the rest for your personal use.
 
-## Theme
-
-I use the Gruvbox color scheme for my desktop environment. Every program I use is themed to match this color scheme.
-
-Gruvbox is a retro groove color scheme for Vim, terminal emulators, and other text-based applications. It's colors are available at [morhetz/gruvbox](https://github.com/morhetz/gruvbox).
-
-## Desktop Environment
-
-### i3
-
-i3 is the most popular tiling window manger because it is lightweight, easy to use, and highly customizable. The configuration included in this repository has been modified to include a variety of useful features, including:
-
-* Gaps between windows (not available if using i3 non-gaps package which will be phased out in the future)
-* Autotiling
-* i3lock support
-* normal vim keys (`hjkl`, not i3's default shifted vim keys `jkl;`)
-* caps lock and escape key swap
-* screenshot support (using maim)
-* Random wallpaper script using [derf/feh](https://github/com/derf/feh)
-
-**Breaking changes**
-
-This program's config in particular is highly personalized and is not a plug-and-play solution. If an error occurs, it might make i3 unusable. I recommend users to familiarize themselves with the changes made and the keybindings used in order to fully take advantage of this configuration.
-
-- JetbrainsMono Nerd Font is used. If you do not have this font installed, you will need to change the font in the config.
-- Xrandr is set to 144hz. If you have a different refresh rate, you will need to change this.
-- Autostart programs. A handfull of programs are started automatically when i3 starts. If you do not have these programs installed, you will need to remove them from the config.
-- Hotkey programs. The programs I use most are bound to hotkeys. If you do not have these programs installed, these hotkeys will not work.
-
-#### ``.xinitrc``
-
-This file configures the command `startx` to open i3. This is nessecary since I do not use a login manager such as GDM or LightDM in the intrest of simplicity and speed.
-
-### Polybar
-
-Polybar is a lightweight and highly customizable bar that can be displayed at the top of the screen. I prefer it to i3's built in status bar because I find it easier to configure. My configuration includes the following modules in order from left to right:
-
-- Workspace indicator
-  - Active workspace is highlighted. Empty workspaces are not displayed. Clicking on a workspace or scrolling on the bar will switch workspaces.
-- Playerctl module
-  - Displays the currently playing song and artist. Clicking on the module will play/pause the song.
-- Active Window title
-  - Displays the title of the currently focused window.
-- Volume
-  - Displays the current volume level. Clicking on the module will mute/unmute the volume. Scrolling on the module will increase/decrease the volume.
-- Brightness
-  - Displays the current brightness level. Scrolling on the module will increase/decrease the brightness.
-- Battery
-  - Displays the current battery level. Clicking on the module will open the power manager. Scrolling on the module unfortunately cannot increase your battery level.
-- Date and time
-  - Displays the current time or date. Clicking on the module switches between the two.
-
-### Rofi
-
-Rofi is an application launcher. I prefer it to dmenu because it looks pretty.
-
-### Dunst
-
-Dunst displays notifications. That's it.
-
-### Neofetch
-
-Neofetch shows your system information. It isn't necessary, but it looks cool.
-
-The configuration included in this repository has been modified to include the display of the screen's refresh rate alongside the resolution in the output.
-
 ## Shell
 
 ### zsh
 
-I prefer to use zsh as my shell since it's more feature rich and modern, but my configuration files also work with bash. The configuration included in this repository has been modified to include a variety of useful features, including:
+I prefer to use zsh as my shell since it's more feature rich and modern. The configuration included in this repository has been modified to include a variety of useful features, including:
 
 #### zsh specific features
 * Syntax highlighting with [zdharma-continuum/fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
 * Better tab completion
-* Vi mode
+* Vi mode with cursor shape changes per mode
 
 #### Shell agnostic features
 * Useful aliases and functions (look in `.commonrc` to see them all)
 * Auto ls after cd
-* Informative prompt
+* Informative colored prompt
 * Home, end, and delete keys work properly
 
 Most shell configuration is in the `.commonrc` file so that it can be shared between bash and zsh. The `.zshrc` and `.bashrc` files are used to set features specific to each shell.
 
+### bash
+
+The `.bashrc` includes the shared `.commonrc`, sets a simple prompt, enables `autocd`, and implements auto-ls-after-cd via a `cd()` wrapper. `.bash_profile` sources `.bashrc` so the same config applies to login shells.
+
+The `.bashrc` also includes optional [Kiro](https://kiro.aws/) shell integration when running inside a Kiro terminal session.
+
+### `.commonrc`
+
+This file is sourced by both `.zshrc` and `.bashrc` to share configuration between shells. It includes:
+
+- **Defaults**: Sets `$EDITOR` to `code`, `$TERMINAL` to `alacritty`, and `$BROWSER` to `firefox`.
+- **Safety aliases**: `cp`, `mv`, `rm` with verbose/prompt flags; `mkdir -pv` as `mkd`.
+- **`ls` alias**: Human-readable, colorized, with directories listed first.
+- **`backup()`**: rsync-based home directory backup to a mounted drive, excluding large/replaceable directories (`.cache`, `.wine`, browser profiles, etc.).
+- **`yt` / `yta` aliases**: `yt-dlp` wrappers for downloading video and audio.
+- **`sortsize` alias**: Sort subdirectories by disk usage.
+- **`numfiles()`**: Count files per subdirectory, sorted descending.
+- **`bt` alias**: Shorthand for `bluetoothctl`.
+- **`vi()` function**: Opens `nvim .` if no arguments are given, otherwise passes arguments to `nvim`.
+- **`playlist()`**: Generates `.m3u` playlist files for each subdirectory under `~/music/songs`.
+- **`??` alias**: Shorthand for `gh copilot -i` (GitHub Copilot CLI).
+- **Antigravity PTY block**: Sets `TERM=dumb` and a plain `PS1` when running inside an Antigravity agent session to prevent terminal control sequences from interfering.
+
 ### kitty
 
-kitty is one of the most feature rich terminal emulators available while also being lightweight. If you are looking for something with fewer features, I recommend you use alacrity or st.
+kitty is one of the most feature rich terminal emulators available while also being lightweight.
 
 The configuration included in this repository has been modified to include a variety of useful features, including:
 
@@ -137,7 +105,9 @@ The configuration included in this repository has been modified to include a var
 - Disabled confirmation on quit
 - Enabled background opacity
 
-## neovim
+## Editors
+
+### neovim
 
 neovim is just Vim but better. If you currently use Vim your current `init.vim` will work with neovim. There is no reason not to switch.
 
@@ -145,10 +115,10 @@ If you have never used Vim bindings before, you should look into them. They are 
 
 The configuration included in this repository has been modified to include a variety of useful features across multiple configuration files.
 
-### `init.lua`
+#### `init.lua`
 This file just imports the other configuration files.
 
-### `options.lua`
+#### `options.lua`
 
 This file configures the general options of neovim.
 
@@ -161,7 +131,7 @@ This file configures the general options of neovim.
 - Standard search options
 - Plugin configuration
 
-### `plugins.lua`
+#### `plugins.lua`
 
 This file configures [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) which is a plugin manager for neovim written in Lua. When `PackerSync` is run, the following plugins and their dependencies will be installed:
 
@@ -180,12 +150,12 @@ This file configures [wbthomason/packer.nvim](https://github.com/wbthomason/pack
   - I use [charmbracelet/glow](https://github.com/charmbracelet/glow) to preview markdown files, but it is not a neovim plugin. It is a standalone program.
   - [barrett-ruth/live-server.nvim](https://github.com/barrett-ruth/live-server.nvim)
   - [lervag/vimtex](https://github.com/lervag/vimtex)
-- Copilot, LSP, Autocompletetion
+- Copilot, LSP, Autocompletion
   - [github/copilot.vim](https://github.com/github/copilot.vim)
   - [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim)
 
 
-### `keymaps.lua`
+#### `keymaps.lua`
 
 This file configures my custom keybindings and commands for neovim.
 
@@ -198,17 +168,21 @@ This file configures my custom keybindings and commands for neovim.
 - Open a vscode-like terminal with `leader + t`
 - Standard split navigation and resizing shortcuts
 
-### `colorscheme.lua`
+#### `colorscheme.lua`
 
 This file sets the color scheme of neovim and vim-airline to Gruvbox.
 
-### `lsp.lua`
+#### `lsp.lua`
 
 This file sets up language server protocol support for neovim. LSPs need to be installed separately for each language using the `:LspInstall` command.
 
-### `config/nvim-cmp.lua`
+#### `config/nvim-cmp.lua`
 
-This file configures autocompletion and it's hotkeys.
+This file configures autocompletion and its hotkeys.
+
+### VS Code / Cursor / Antigravity
+
+`settings.json` files for VS Code, Cursor, and Antigravity are tracked under their respective `.config/` directories. These share a common set of editor preferences.
 
 ## Media
 
@@ -226,11 +200,7 @@ I've made the following changes to the default configuration:
 
 mpd is to music what mpv is to video. It is a powerful and lightweight music player daemon. mpd shouldn't be used directly, but rather with a client such as ncmpcpp.
 
-My mpd configuration is very simple and only includes the location of songs and playlists along with audio visualization support. mpd is configured to automatically start when the computer boots in my i3 config.
-
-#### mpDris2
-
-mpDris2 is a MPRIS bridge for mpd. It allows mpd to be controlled by media keys. mpDris2 is configured to automatically start when the computer boots in my i3 config.
+My mpd configuration is very simple and only includes the location of songs and playlists along with audio visualization support.
 
 ### ncmpcpp
 
@@ -238,21 +208,9 @@ ncmpcpp is a music player client for mpd.
 
 My configuration mostly boils down to Vim keybindings, minor cosmetic changes, and the removal of windows that I don't use.
 
-### sxiv
-
-Simple X Image Viewer is a simple image viewer for the X Window System. Need I say more?
-
-The configuration included in this repository has been modified to include a convenient shortcut `Ctrl+X Ctrl+D` for deleting the currently displayed image.
-
-#### ``.Xresources`` - configures X Window System resources
-
-Xresources is a database that stores the default X Window System resources values.
-
-sxiv uses this for theming so this file is used to set the colors to match the Gruvbox theme.
-
 ## Wallpapers
 
-I have included a directory `.config/wallpapers` with wallpapers meant to go well with the Gruvbox theme and to work the i3 config random wallpaper script.
+I have included a directory `.config/wallpapers` with wallpapers.
 
 ## License
 
