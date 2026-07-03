@@ -1,6 +1,6 @@
 # My Dotfiles
 
-This repository contains my personal configuration files, also known as dotfiles. These files configure various programs that I use daily on my computer which runs Arch Linux with the i3 window manager.
+This repository contains my personal configuration files, also known as dotfiles. These files configure various programs that I use daily on my computer which runs Fedora Workstation.
 
 ## Table of Contents
 
