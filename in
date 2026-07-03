@@ -1,0 +1,67 @@
+#!/bin/bash
+# in - Copy dotfiles from ~ into this repo
+
+REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Dotfiles tracked in this repo (relative to ~)
+FILES=(
+    .Xresources
+    .bash_profile
+    .bashrc
+    .commonrc
+    .xinitrc
+    .zshrc
+    .config/Antigravity/User/settings.json
+    .config/Code/User/settings.json
+    .config/Cursor/User/settings.json
+    .config/dunst/dunstrc
+    .config/fast-syntax-highlighting
+    .config/i3/config
+    .config/kitty/kitty.conf
+    .config/kitty/theme.conf
+    .config/mpd/mpd.conf
+    .config/mpv/mpv.conf
+    .config/mpv/scripts/delete_file.lua
+    .config/mpv/scripts/mpris.so
+    .config/ncmpcpp/bindings
+    .config/ncmpcpp/config
+    .config/neofetch/config.conf
+    .config/nvim/init.lua
+    .config/nvim/lua/colorscheme.lua
+    .config/nvim/lua/config/nvim-cmp.lua
+    .config/nvim/lua/keymaps.lua
+    .config/nvim/lua/lsp.lua
+    .config/nvim/lua/options.lua
+    .config/nvim/lua/plugins.lua
+    .config/nvim/plugin/packer_compiled.lua
+    .config/polybar/colors.ini
+    .config/polybar/config.ini
+    .config/polybar/launch.sh
+    .config/polybar/media.sh
+    .config/polybar/modules.ini
+    .config/rofi/config.rasi
+    .config/rofi/theme/squared-everforest.rasi
+    .config/rofi/theme/ultratheme.rasi
+    .config/sxiv/exec/key-handler
+)
+
+copied=0
+skipped=0
+
+for file in "${FILES[@]}"; do
+    src="$HOME/$file"
+    dest="$REPO_DIR/$file"
+
+    if [ -e "$src" ]; then
+        mkdir -p "$(dirname "$dest")"
+        cp "$src" "$dest"
+        echo "  ✓ $file"
+        ((copied++))
+    else
+        echo "  ✗ $file (not found in ~)"
+        ((skipped++))
+    fi
+done
+
+echo ""
+echo "Done: $copied copied, $skipped skipped"
