@@ -12,5 +12,3 @@ shopt -s autocd
 
 # auto ls after cd
 cd() { builtin cd "$@";ls;}
-
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"

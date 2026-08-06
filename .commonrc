@@ -1,5 +1,4 @@
 # ~/.commonrc
-setxkbmap -option "caps:swapescape"
 
 # Defaults
 export EDITOR="code"
@@ -81,14 +80,3 @@ playlist() {
         echo "Playlist file '${playlist_file}' created successfully."
     done
 }
-
-# Antigravity PTY synchronization fix
-if [[ -n "$ANTIGRAVITY_AGENT" ]]; then
-    export TERM=dumb
-    export DEBIAN_FRONTEND=noninteractive
-    export PS1='$ '
-    unset PROMPT_COMMAND
-    # Optional: ensure Python output isn't buffered
-    export PYTHONUNBUFFERED=1
-    unalias -a
-fi
