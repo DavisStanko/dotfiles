@@ -80,3 +80,5 @@ playlist() {
         echo "Playlist file '${playlist_file}' created successfully."
     done
 }
+
+export PATH="$PATH:/home/davis/go-install/go/bin:/home/davis/go/bin"
