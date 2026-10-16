@@ -15,6 +15,8 @@ alias ls="ls -hN --color=auto --group-directories-first" # Human readable. Print
 alias grep="grep --color=auto" # Colorized
 
 # Personal.
+alias lab="ssh davis@100.79.206.75"
+
 # Backup my files to a specified dir. Transfer modification times. Recursive. Compress. Partial transfer. Keep permissions. Exclude replaceable folders due to drive size. Remove deleted files.
 backup() {
   local dest="/mnt/$1"
