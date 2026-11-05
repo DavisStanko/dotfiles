@@ -311,7 +311,6 @@
     "c": false,
     "diff": false,
   },
-  "python.createEnvironment.trigger": "off",
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
@@ -334,7 +333,6 @@
   "workbench.colorTheme": "Gruvbox Dark Medium",
   "workbench.editor.enablePreview": false,
   "editor.minimap.enabled": false,
-  "python.defaultInterpreterPath": "/bin/python",
   "go.toolsManagement.autoUpdate": true,
   "git.ignoreRebaseWarning": true,
   "chat.tools.terminal.autoApprove": {
@@ -393,4 +391,6 @@
     },
   },
   "terminal.integrated.defaultProfile.linux": "zsh-host",
+  "terminal.integrated.initialHint": false,
+  "chat.viewSessions.orientation": "stacked",
 }

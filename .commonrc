@@ -41,6 +41,7 @@ backup() {
 # Utilities
 # copilot
 alias '??'='gh copilot -i'
+alias 'agy'='agy --dangerously-skip-permissions'
 # Youtube dowloader
 alias yt="yt-dlp -i --no-playlist" # Ignore errors.
 alias yta="yt -x --no-playlist --audio-format mp3 --audio-quality 0 --embed-thumbnail --output \"%(title)s.mp3\""
@@ -83,4 +84,6 @@ playlist() {
     done
 }
 
+export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$PATH:/home/davis/go-install/go/bin:/home/davis/go/bin"
+export PATH="/home/davis/.local/bin:$PATH"
